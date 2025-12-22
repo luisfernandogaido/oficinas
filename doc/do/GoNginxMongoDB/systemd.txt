@@ -1,0 +1,7 @@
+netstat -peanut | grep 4000
+
+4007    gmail
+4008    calms
+4009    cnc
+4010    fipe
+4011    qrcode

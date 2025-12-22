@@ -1,0 +1,53 @@
+@import "form.css";
+
+form {
+    margin: 0 2rem;
+}
+
+.botoes {
+    margin: 2rem 0;
+    justify-content: space-between;
+}
+
+.campos {
+    margin: 2rem 0;
+}
+
+.botoes > button, .botoes > a.button {
+    flex: 0 1 100%;
+    margin: 0;
+}
+
+#b-esqueci {
+    margin-top: 1.5rem;
+    flex: 1 1 auto;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: none;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+h1, p {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    body.menu-docado #alerta {
+        left: 50%;
+    }
+}
+
+.email {
+    font-weight: bold;
+    margin-bottom: 0;
+}

@@ -1,0 +1,24 @@
+[Unit]
+
+Description=Short: Encurtador de URL
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/var/www/html/short/example/example --mongo_uri="mongodb://gaido:1000sonhosreais@167.99.55.99:27017/?authSource=admin" --token_root="9DVERbjO7R" --domain="https://short.gaido.dev"
+WorkingDirectory=/var/www/html/short/example
+Restart=on-failure
+RestartSec=10
+
+Environment=KEY=value
+
+[Install]
+WantedBy=multi-user.target
+
+systemctl enable short.service
+systemctl restart short.service
+systemctl status short.service
+
+systemctl disable short.service
+systemctl edit --full --force short.service
+systemctl daemon-reload

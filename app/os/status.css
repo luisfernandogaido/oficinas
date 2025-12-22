@@ -1,0 +1,82 @@
+span.status, span.badge {
+    padding: 0.15rem 0.35rem;
+    font-size: 0.7rem;
+    border-radius: 0.25rem;
+    background: #888888;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    text-align: center;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 384px) {
+    span.status, span.badge {
+        font-size: 0.9rem;
+    }
+}
+
+span.status.solicitada {
+    background: #6366f1;
+    color: #ffffff;
+}
+
+span.status.analise {
+    background: #f59e0b;
+    color: #1f2937;
+}
+
+span.status.aguardando_aprovacao {
+    background: #ec4899;
+    color: #ffffff;
+    font-size: 0.6rem;
+}
+
+@media screen and (min-width: 384px) {
+    span.status.aguardando_aprovacao, span.status.em_andamento {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    span.status.aguardando_aprovacao, span.status.em_andamento {
+        font-size: 0.9rem;
+    }
+}
+
+span.status.agendada {
+    background: #10b981;
+    color: #ffffff;
+}
+
+span.status.em_andamento {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+span.status.aguardando_pecas {
+    background: #f97316;
+    color: #ffffff;
+}
+
+span.status.concluida {
+    background: #14b8a6;
+    color: #ffffff;
+}
+
+span.status.finalizada {
+    background: #22c55e;
+    color: #ffffff;
+}
+
+span.status.cancelada {
+    background: #6b7280;
+    color: #ffffff;
+}
+
+span.status.rejeitada {
+    background: #ef4444;
+    color: #ffffff;
+}

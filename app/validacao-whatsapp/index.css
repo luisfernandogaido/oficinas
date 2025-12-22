@@ -1,0 +1,82 @@
+#validacoes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#validacoes .validacao {
+    flex: 1 1 100%;
+    background: var(--fg);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 2px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#validacoes .validacao .campo {
+    padding: 0.25rem;
+    flex: 1 1 100%;
+}
+
+#validacoes .validacao .campo.c2 {
+    padding: 0.25rem;
+    flex: 0 1 calc(100% / 2);
+}
+
+#validacoes .validacao .campo > label {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+#validacoes .validacao .campo > div {
+    font-size: 0.9rem;
+}
+
+#validacoes .validacao .campo a {
+    font-size: 0.9rem;
+}
+
+#validacoes .validacao .campo.token {
+    flex: 0 1 auto;
+}
+
+#validacoes .validacao .campo.criacao {
+    flex: 0 1 auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+    #validacoes .validacao {
+        flex: 0 1 calc(100% / 2 - 4px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #validacoes .validacao {
+        flex: 0 1 calc(100% / 3 - 4px);
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    #validacoes .validacao {
+        flex: 0 1 calc(100% / 4 - 4px);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #validacoes .validacao {
+        flex: 0 1 calc(100% / 5 - 4px);
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #validacoes .validacao {
+        flex: 0 1 calc(100% / 6 - 4px);
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    #validacoes .validacao {
+        flex: 0 1 calc(100% / 8 - 4px);
+    }
+}

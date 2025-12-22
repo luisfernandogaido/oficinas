@@ -1,0 +1,292 @@
+header > .banner {
+    flex: 1 1 auto;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.ctn {
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+section {
+    flex: 1 1 100%;
+    background: var(--fg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 0 0.25rem 0.5rem 0.25rem;
+}
+
+section.m2 {
+    flex: 0 1 calc(100% / 2 - 0.5rem);
+}
+
+section h1 {
+    text-align: center;
+}
+
+section p.c {
+    text-align: center;
+}
+
+section p.f {
+    display: flex;
+    margin-top: 0.25rem;
+}
+
+section p.f.c {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.25rem;
+}
+
+span.status {
+    padding: 0.15rem 0.35rem;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+    background: indigo;
+    color: white;
+}
+
+span.status.solicitada {
+    background: #6366f1;
+    color: #ffffff;
+}
+
+span.status.analise {
+    background: #f59e0b;
+    color: #1f2937;
+}
+
+span.status.aguardando_aprovacao {
+    background: #ec4899;
+    color: #ffffff;
+}
+
+span.status.agendada {
+    background: #10b981;
+    color: #ffffff;
+}
+
+span.status.em_andamento {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+span.status.aguardando_pecas {
+    background: #f97316;
+    color: #ffffff;
+}
+
+span.status.concluida {
+    background: #14b8a6;
+    color: #ffffff;
+}
+
+span.status.finalizada {
+    background: #22c55e;
+    color: #ffffff;
+}
+
+span.status.cancelada {
+    background: #6b7280;
+    color: #ffffff;
+}
+
+span.status.rejeitada {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+img.tipo {
+    height: 1.5rem;
+}
+
+.fields {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.fields .field {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0.25rem;
+}
+
+.fields label {
+    font-weight: bold;
+    color: #5f6368;
+}
+
+.fields .field > div {
+    margin-top: auto;
+}
+
+section table {
+    margin: auto;
+}
+
+section table tr {
+    border: none;
+}
+
+section table tr th {
+    line-height: normal;
+    text-align: right;
+    color: #5f6368;
+}
+
+section:has(table) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctn > .botoes {
+    flex: 1 1 100%;
+}
+
+#carrossel {
+    max-height: 75vh;
+    text-align: center;
+    display: flex;
+    overflow-x: auto;
+    position: relative;
+    margin: 1rem 0;
+}
+
+#carrossel > div {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 30rem;
+    max-width: 80vw;
+    margin: 0 0.25rem;
+    scroll-behavior: smooth;
+}
+
+#carrossel video {
+    max-width: 80vw;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+#carrossel img {
+    max-width: 80vw;
+    max-height: 100%;
+}
+
+#carrossel button {
+    display: block;
+    position: sticky;
+    z-index: 1;
+    flex: 0 0 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+.sem-botoes #carrossel button {
+    display: none;
+}
+
+#carrossel button.left {
+    left: 1rem;
+    background: url("../../core/templates/gaido/img/arrow-left.svg") no-repeat center white;
+    background-size: 80%;
+}
+
+#carrossel button.right {
+    right: 1rem;
+    background: url("../../core/templates/gaido/img/arrow-right.svg") no-repeat center white;
+    background-size: 80%;
+}
+
+#orcamento .resumo {
+    margin: auto;
+    max-width: 300px;
+}
+
+#orcamento .resumo .linha {
+    display: flex;
+}
+
+#orcamento .resumo .linha.maior {
+    margin-top: 0.5rem;
+}
+
+#orcamento .resumo .linha.maior :is(.label, .value) {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#orcamento .resumo .linha .value {
+    margin-left: auto;
+    text-align: right;
+}
+
+.itens .item {
+    display: flex;
+    border-bottom: 1px solid #bbbbbb;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.itens .item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.itens .subtotal {
+    margin-left: auto;
+    text-align: right;
+}
+
+#actions {
+    background: var(--fg);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: sticky;
+    bottom: 0;
+}
+
+#actions .botoes button {
+    flex: 1 1 0;
+    margin: 1px;
+}
+
+.botoes button {
+    margin: 1px;
+}
+
+@media screen and (min-width: 768px) {
+    .ctn, #actions {
+        width: 700px;
+        margin: auto;
+    }
+
+    section.d2 {
+        flex: 1 1 calc(100% / 2 - 0.5rem);
+    }
+
+    section.d3 {
+        flex: 1 1 calc(100% / 3 - 0.5rem);
+    }
+
+    #actions .botoes button {
+        flex: 0 0 250px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #carrossel {
+        height: 20rem;
+    }
+}

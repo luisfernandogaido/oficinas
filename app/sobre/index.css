@@ -1,0 +1,27 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+main h1 {
+    font-size: 2rem;
+}
+
+main h1, main p {
+    text-align: center;
+}
+
+
+main p, main a {
+    font-size: 1.5rem;
+}
+
+main a, main a:hover {
+    color: steelblue;
+}
+
+main a:hover {
+    text-decoration: underline;
+}

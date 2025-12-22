@@ -1,0 +1,23 @@
+div.popover {
+    background: var(--fg);
+    box-shadow: 2px 2px 4px #888888;
+    position: fixed;
+    z-index: 11;
+    padding: 1rem;
+    display: none;
+    overflow: auto;
+}
+
+.dark div.popover {
+    box-shadow: 0 0 1rem black;
+}
+
+div.popover.show {
+    display: block;
+}
+
+@media print {
+    div.popover.show {
+        display: none;
+    }
+}

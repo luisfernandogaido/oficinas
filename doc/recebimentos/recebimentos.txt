@@ -1,0 +1,14 @@
+Tabela de receitas aproximadas extra Correios (descontando custos de hosts, impostos):
+
+01 Itikawa: 170.00
+02 Alphapetroleo: 95.00
+10 Diego: 2500.00
+10 Abralatas: 500.00
+10 Flávia: 150.00
+10 Odonto: 800.00
+15 Profinanc: 2400.00
+27 Bruno Zulian: 125.00
+
+Total: 6740.00
+
+

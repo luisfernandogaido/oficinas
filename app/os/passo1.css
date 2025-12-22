@@ -1,0 +1,9 @@
+.campos > .campo.problema .checks label {
+    flex: 1 1 100%;
+}
+
+@media screen and (min-width: 400px) {
+    .campos > .campo.problema .checks label {
+        flex: 0 1 calc(100% / 2 - 2px);
+    }
+}

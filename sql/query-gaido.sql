@@ -1,0 +1,7 @@
+SET GLOBAL max_allowed_packet = 128*1024*1024;
+SET FOREIGN_KEY_CHECKS=0; SET FOREIGN_KEY_CHECKS=1;
+SET GLOBAL innodb_ft_enable_stopword = 'OFF';
+SHOW VARIABLES LIKE '%stopword%';
+SHOW GLOBAL STATUS LIKE 'Uptime';
+SELECT VERSION();
+SHOW VARIABLES LIKE 'validate_password%';

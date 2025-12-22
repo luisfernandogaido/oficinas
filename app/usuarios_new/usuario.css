@@ -1,0 +1,71 @@
+div.panel {
+    background: var(--fg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+div.panel table {
+    margin: 0;
+}
+
+div.panel td, div.panel td b, div.panel td a {
+    font-size: 0.9rem;
+    line-break: anywhere;
+}
+
+div.panel td b {
+    line-break: normal;
+}
+
+div.panel tr {
+    border: none;
+}
+
+.resumo-e-acoes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#acoes {
+    margin-top: 0.5rem;
+    flex: 1 1 100%;
+    display: flex;
+}
+
+#resumo {
+    position: relative;
+}
+
+.checks#acoes label {
+    /*flex: 0 1 calc(100% / 2 - 2px);*/
+    flex: 1 1 100%;
+    margin: 0;
+}
+
+#perigo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+    div.panel {
+        width: 700px;
+        margin: 0 auto 0.5rem auto;
+    }
+
+    .resumo-e-acoes {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    #acoes {
+        margin-top: 0;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+    }
+
+    .checks#acoes label {
+        flex: 0 1 auto;
+    }
+}

@@ -1,0 +1,7 @@
+docker run --name some-redis2 --restart unless-stopped -d -p 6379:6379 -m "128m" redis
+docker run -it --link some-redis:redis redis redis-cli -h redis -p 6379
+docker container start some-redis
+docker system prune -a
+docker exec -it some-redis redis-cli
+
+https://www.jhipster.tech/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html

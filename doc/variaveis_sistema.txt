@@ -1,0 +1,39 @@
+útil pra não esquecer senhas nas máquinas
+
+gaido
+    meus computadores:
+        SetEnv EMAIL_USER luisfernandogaido@gmail.com
+        SetEnv EMAIL_PASS wvzyyxmswjqunbrx
+        SetEnv EMAIL_NAME "Luís Fernando Gaido"
+        SetEnv GAIDO_MYSQL_HOST localhost
+        SetEnv GAIDO_MYSQL_USER root
+        SetEnv GAIDO_MYSQL_PASS Semaver13
+        SetEnv GAIDO_MYSQL_BASE gaido
+    php81
+        export EMAIL_USER="luisfernandogaido@gmail.com"
+        export EMAIL_PASS="wvzyyxmswjqunbrx"
+        export EMAIL_NAME="Luís Fernando Gaido"
+        export GAIDO_MYSQL_HOST="localhost"
+        export GAIDO_MYSQL_USER="root"
+        export GAIDO_MYSQL_PASS="1000sonhosreais"
+        export GAIDO_MYSQL_BASE="gaido"
+empresas
+    meus computadores:
+        SetEnv EMPRESAS_MYSQL_HOST localhost
+        SetEnv EMPRESAS_MYSQL_USER root
+        SetEnv EMPRESAS_MYSQL_PASS Semaver13
+        SetEnv EMPRESAS_MYSQL_BASE gaido
+    php81
+        export EMPRESAS_MYSQL_HOST="localhost"
+        export EMPRESAS_MYSQL_USER="root"
+        export EMPRESAS_MYSQL_PASS="1000sonhosreais"
+        export EMPRESAS_MYSQL_BASE="empresas"
+Definindo:
+windows:
+Start-Process powershell -Verb runAs -ArgumentList '[Environment]::SetEnvironmentVariable("EMAIL_NAME", "Luís Fernando Gaido", "Machine")'
+Apache:
+SetEnv EMAIL_NAME "Luís Fernando Gaido"
+Nginx, em location ~ \.php$:
+fastcgi_param EMAIL_NAME "Luís Fernando Gaido";
+linux:
+export EMAIL_NAME="Luís Fernando Gaido"

@@ -1,0 +1,17 @@
+host: bi.profinanc.com.br ou 68.183.121.95
+user: root
+pass: w9wDiXHPvE
+base: [qualquer uma]
+
+host: bi.profinanc.com.br
+user:bi_readonly
+pass: jcfJhLSckphF
+base: bi
+
+host: bi.profinanc.com.br ou 68.183.121.95
+user: hub_user
+pass: VKdcbqp4NEwB
+base: hub
+
+GoMongoDB
+mongodb://profinanc:yCyPvAragfuxWK9b@68.183.24.83:27017/?authSource=admin

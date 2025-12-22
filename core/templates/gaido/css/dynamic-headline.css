@@ -1,0 +1,9 @@
+p.dynamic-readline {
+    display: block;
+    overflow: hidden;
+}
+
+p.dynamic-readline span {
+    transition: all .25s ease-in-out;
+    position: relative;
+}

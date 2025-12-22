@@ -1,0 +1,74 @@
+header {
+    display: none;
+}
+
+body {
+    background: #f1f2f4;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+}
+
+#preto {
+    background: black;
+    height: 5rem;
+}
+
+#container {
+    margin: 0 1rem;
+    position: relative;
+    top: -3rem;
+}
+
+#container section {
+    padding: 1rem;
+    border-radius: 1rem;
+    background: white;
+    margin-bottom: 0.75rem;
+}
+
+#container section:last-child {
+    margin-bottom: 0;
+}
+
+.workspace-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workspace-logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 25vh;
+}
+
+@media screen and (min-width: 768px) {
+    #container {
+        margin: 0 auto;
+        width: 700px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #container {
+        top: -3rem;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+}
+
+#flutuante {
+    position: sticky;
+    bottom: 1rem;
+}
+
+section.endereco {
+    text-align: center;
+}

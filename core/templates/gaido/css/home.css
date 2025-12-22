@@ -1,0 +1,243 @@
+#home {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5rem;
+}
+
+#home .item {
+    flex: 0 1 100%;
+    background: var(--fg);
+    border-radius: 4px;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    white-space: normal;
+    height: auto;
+    border: 2px solid transparent;
+}
+
+#home .item:hover {
+    /*border: 2px solid black;*/
+    border: 2px solid #388bff;
+}
+
+#home .item:active {
+    background: #dddddd;
+}
+
+.dark #home .item:hover {
+    /*border: 2px solid white;*/
+    border: 2px solid #85b8ff;
+}
+
+.dark #home .item:active {
+    background: var(--fgh);
+}
+
+#home h2 {
+    font-size: 1.1rem;
+}
+
+.dark #home h2 {
+    color: white;
+}
+
+#home .item .icon {
+    flex: 0 0 2.5rem;
+    height: 2.5rem;
+    background: no-repeat center;
+    background-size: contain;
+}
+
+#home .item .desc {
+    margin-left: 0.5rem;
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+#home .item .desc p {
+    color: #5f6368;
+    font-size: 0.9rem;
+}
+
+.dark #home .item .desc p {
+    color: #aaaaaa;
+}
+
+@media screen and (min-width: 768px) {
+    #home {
+        width: 700px;
+        margin: auto;
+    }
+
+    #home .item {
+        flex: 0 1 calc(50% - 0.25rem);
+    }
+}
+
+#home .icon.users {
+    background-image: url("../img/home/users.svg");
+}
+
+#home .icon.b2b {
+    background-image: url("../img/home/b2b.png");
+}
+
+#home .icon.building {
+    background-image: url("../img/home/building.png");
+}
+
+#home .icon.task {
+    background-image: url("../img/home/task.png");
+}
+
+#home .icon.record {
+    background-image: url("../img/home/record.png");
+}
+
+#home .icon.leads {
+    background-image: url("../img/home/leads.png");
+}
+
+#home .icon.post {
+    background-image: url("../img/home/post.png");
+}
+
+#home .icon.blog {
+    background-image: url("../img/home/blog.png");
+}
+
+#home .icon.weighing {
+    background-image: url("../img/home/weighing.png");
+}
+
+#home .icon.notebooks {
+    background-image: url("../img/home/notebooks.png");
+}
+
+#home .icon.log {
+    background-image: url("../img/home/log.png");
+}
+
+#home .icon.logs {
+    background-image: url("../img/home/logs.png");
+}
+
+#home .icon.loan {
+    background-image: url("../img/home/loan.png");
+}
+
+#home .icon.install {
+    background-image: url("../img/home/install.png");
+}
+
+#home .icon.mamadeira {
+    background-image: url("../img/home/mamadeira.png");
+}
+
+#home .icon.qrcode {
+    background-image: url("../img/home/qr-scan.png");
+}
+
+#home .icon.wa {
+    background-image: url("../img/home/whatsapp.png");
+}
+
+#home .icon.gmaps {
+    background-image: url("../img/home/google-maps.png");
+}
+
+#home .icon.calories {
+    background-image: url("../img/home/calories.png");
+}
+
+#home .icon.invitation {
+    background-image: url("../img/home/invitation.png");
+}
+
+#home .icon.budget {
+    background-image: url("../img/home/budget.png");
+}
+
+#home .icon.minidocs {
+    background-image: url("../img/home/minidocs.png");
+}
+
+#home .icon.quote-request {
+    background-image: url("../img/home/quote-request.png");
+}
+
+#home .icon.package {
+    background-image: url("../img/home/package.png");
+}
+
+#home .icon.welcome {
+    background-image: url("../img/home/welcome.png");
+}
+
+#home .icon.vimeo {
+    background-image: url("../img/home/vimeo.png");
+}
+
+#home .icon.developer {
+    background-image: url("../img/home/developer.png");
+}
+
+#home .icon.viral {
+    background-image: url("../img/home/viral.png");
+}
+
+#home .icon.history {
+    background-image: url("../img/home/history.png");
+}
+
+#home .icon.verify {
+    background-image: url("../img/home/verify.png");
+}
+
+#home .icon.affiliate {
+    background-image: url("../img/home/affiliate.png");
+}
+
+#home .icon.profit {
+    background-image: url("../img/home/profit.png");
+}
+
+#home .icon.invite {
+    background-image: url("../img/home/invite.png");
+}
+
+#home .icon.live-lead {
+    background-image: url("../img/home/live-lead.png");
+}
+
+#home .icon.atlas {
+    background-image: url("../img/home/atlas.png");
+}
+
+#home .icon.settings {
+    background-image: url("../img/home/settings.png");
+}
+
+#home .icon.excel {
+    background-image: url("../img/home/excel.png");
+}
+
+#home .icon.workspace {
+    background-image: url("../img/home/workspace.png");
+}
+
+#home .icon.workspace-auto {
+    background-image: url("../img/home/workspace-auto.png");
+}
+
+#home .icon.workspace-share {
+    background-image: url("../img/home/workspace-share-128.png");
+}
+
+#home .icon.request {
+    background-image: url("../img/home/request.png");
+}

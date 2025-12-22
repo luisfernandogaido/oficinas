@@ -1,0 +1,26 @@
+netstat -peanut | grep 4000
+
+4007    gmail ok
+4008    calms ok
+4009    cnc
+4010    fipe ok
+4011    qrcode
+4012    aut
+4013    access
+4014    legmon
+4015    godonto
+4016    agentefederal
+4017    bs
+4018    short
+4019    toplog (não criei API ainda, mas reservei a porta) (desativei porque é memory greeding)
+4020    reporter
+4021    pro-go
+4022    logger
+4023    storage
+4024    grana
+4025    oportunity
+4026    cnc2
+4027    cal
+4028    gd
+4029    pro-go2 #tem que fazer ainda
+8001    machinelearning

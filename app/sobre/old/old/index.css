@@ -1,0 +1,12 @@
+.card {
+    max-width: 325px;
+    margin: auto;
+}
+
+.card p {
+    margin-bottom: 0.25rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}

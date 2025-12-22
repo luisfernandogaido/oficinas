@@ -1,0 +1,204 @@
+header input[type=text] {
+    border-color: transparent;
+    color: black;
+    font-weight: bold;
+}
+
+main {
+    padding: var(--altura-header) 0.5rem 1rem 0.5rem;
+}
+
+#actions {
+    display: flex;
+    position: sticky;
+    inset: auto 0 0 0;
+    background: var(--bg);
+}
+
+#actions button.delete-red {
+    /*margin-left: auto;*/
+}
+
+#minidocs .card {
+    position: relative;
+    border: 2px solid transparent;
+    margin: 1px;
+}
+
+#minidocs .card.sel {
+    border: 2px solid #388bff;
+}
+
+.dark #minidocs .card.sel {
+    border: 2px solid #388bff;
+}
+
+#minidocs .copied {
+    position: absolute;
+    z-index: 6;
+    inset: 0 auto auto 1rem;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: #3594d4;
+    opacity: 0;
+}
+
+#minidocs .copied.done {
+    transition: all 0.375s ease;
+    opacity: 1;
+    inset: -1rem auto auto 1rem;
+}
+
+#minidocs .card .actions {
+    display: flex;
+    position: sticky;
+    inset: calc(var(--altura-header)) 0 auto 0;
+    background: var(--fg);
+    flex: 1 1 100%;
+}
+
+#minidocs .card.file .actions {
+    position: static;
+}
+
+#minidocs .card.file form {
+    display: none;
+}
+
+#minidocs .card.file.edit :is(.actions, div.name, div.type, div.size) {
+    display: none;
+}
+
+#minidocs .card.file.edit :is(form) {
+    display: block;
+}
+
+#minidocs .card .actions :is(button,a.button) {
+    height: 2rem;
+    flex: 0 0 2rem;
+    background-size: 75%;
+}
+
+#minidocs .card .actions button.delete {
+    margin-left: auto;
+}
+
+#minidocs .card.text .content {
+    white-space: pre-line;
+    line-break: anywhere;
+}
+
+#minidocs .card.text .form-text {
+    display: none;
+}
+
+#minidocs .card.text.edit .form-text {
+    display: block;
+    flex: 1 1 100%;
+}
+
+#minidocs .card.text.edit :is(.content, .actions) {
+    display: none;
+}
+
+#minidocs .card.text textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    resize: none;
+    max-height: 50vh;
+}
+
+#minidocs .botoes {
+    justify-content: flex-start;
+    margin: 0.5rem 0;
+    position: sticky;
+    inset: calc(var(--altura-header)) 0 auto 0;
+    background: var(--fg);
+}
+
+#minidocs .botoes button {
+    margin: 1px;
+}
+
+#minidocs .botoes button:first-child {
+    margin-left: 0;
+}
+
+div#minidocs.cards > .card:hover {
+    background: var(--fg);
+}
+
+#minidocs .card.file {
+    flex: 1 1 calc(100% / 2 - 2px);
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+
+@media screen  and (min-width: 768px) {
+    #minidocs .card.file {
+        flex: 0 1 calc(100% / 3 - 2px);
+    }
+}
+
+#minidocs .card.file * {
+    font-size: 0.8rem;
+}
+
+#minidocs .card.file .actions {
+    flex: 1 1 100%;
+    background: transparent;
+}
+
+#minidocs .card.file .name {
+    line-break: anywhere;
+    font-weight: bold;
+    flex: 1 1 100%;
+}
+
+#minidocs .card.file .size {
+    margin-left: auto;
+}
+
+#minidocs .card.file :is(.description, .tags) {
+    flex: 1 1 100%;
+}
+
+#minidocs .card.file form {
+    flex: 1 1 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    #minidocs, #actions, #upload-progress {
+        width: 1000px;
+        margin: auto;
+    }
+}
+
+#upload-progress-wrapper {
+    position: sticky;
+    inset: auto 0 0.25rem 0;
+}
+
+#upload-progress {
+    height: 1.5rem;
+    background: white;
+    position: relative;
+    border: 1px solid #999999;
+    padding: 1px;
+}
+
+#upload-progress div {
+    background: #6787e3;
+    height: 100%;
+}
+
+#upload-progress label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+    font-weight: bold;
+}

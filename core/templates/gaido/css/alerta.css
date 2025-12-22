@@ -1,0 +1,66 @@
+#alerta {
+    position: fixed;
+    z-index: 11;
+    padding: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background: #202124;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.25s ease-out all;
+    display: flex;
+    margin: auto;
+    bottom: -10rem;
+}
+
+@media print {
+    #alerta {
+        display: none;
+    }
+}
+
+.dark #alerta {
+    background: #2d2e31;
+    box-shadow: 0 2px 2px black;
+    border: 1px solid #191a1c;
+}
+
+@media (min-width: 768px) {
+    #alerta {
+        left: 1rem;
+        right: auto;
+    }
+}
+
+#alerta.aberto {
+    padding: 1rem;
+    bottom: 1rem;
+}
+
+#alerta .msg {
+    font-size: 0.9rem;
+    color: #e8eaed;
+    font-weight: bold;
+    flex: 1 1 auto;
+}
+
+.dark #alerta .msg {
+    color: #dddfe2;
+}
+
+#alerta .act {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 1rem;
+}
+
+#alerta .act > a {
+    font-size: 1rem;
+    margin: 0 0.25rem;
+    color: #a6c1ed;
+    text-decoration: none;
+}
+
+#alerta .act > a:hover {
+    color: white;
+}

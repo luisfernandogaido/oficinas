@@ -1,0 +1,71 @@
+.tooltip {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 100px;
+    background: rgba(0, 0, 0, 0.875);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: none;
+    max-width: 300px;
+}
+
+.tooltip.show {
+    display: block;
+}
+
+.tooltip .content {
+    font-size: 0.9rem;
+}
+
+.tooltip .arrow {
+    position: absolute;
+    height: 0;
+    width: 0;
+}
+
+.tooltip .arrow.down {
+    bottom: -0.25rem;
+    left: 50%;
+    margin-left: -0.25rem;
+    border-left: 0.25rem solid transparent;
+    border-right: 0.25rem solid transparent;
+    border-top: 0.25rem solid rgba(0, 0, 0, 0.875);
+}
+
+.tooltip .arrow.up {
+    top: -0.25rem;
+    left: 50%;
+    margin-left: -0.25rem;
+    border-left: 0.25rem solid transparent;
+    border-right: 0.25rem solid transparent;
+    border-bottom: 0.25rem solid rgba(0, 0, 0, 0.875);
+}
+
+div.help {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../img/help.svg") no-repeat center;
+    background-size: contain;
+    vertical-align: center;
+}
+
+div.help-white {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../img/help-white.svg") no-repeat center;
+    background-size: contain;
+    vertical-align: center;
+}
+
+div.help-green {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../img/help-green.svg") no-repeat center;
+    background-size: contain;
+    vertical-align: center;
+}

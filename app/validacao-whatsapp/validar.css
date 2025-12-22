@@ -1,0 +1,50 @@
+form {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: var(--fg);
+}
+
+.usuarios-celular {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.usuarios-celular .usuario {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin: 2px;
+    background: var(--fg);
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.usuarios-celular .usuario .campo {
+    flex: 1 1 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+#b-salva {
+    flex: 1 1 100%;
+}
+
+@media screen and (min-width: 768px) {
+    form, .usuarios-celular {
+        width: 700px;
+        margin: auto;
+    }
+
+    .usuarios-celular .usuario {
+        flex: 0 1 calc(100% / 2 - 4px);
+    }
+
+    #b-salva {
+        flex: 0 0 200px;
+    }
+
+}
+

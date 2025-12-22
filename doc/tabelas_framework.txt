@@ -1,0 +1,10 @@
+assinatura
+aut
+compra
+conta
+convidado
+convite
+unidade
+unidade_usuario
+usuario
+whatsapp_validacao

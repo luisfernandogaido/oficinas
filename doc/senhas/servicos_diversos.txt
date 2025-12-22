@@ -1,0 +1,12 @@
+Twillio
+
+account SID
+ACb4e11307a1751346ef66f9ab856161ce
+Auth Token
+8c3b7bc1dba3dcb8d307829095b627fc
+recuperação se eu perder o telefone: GDEEPPTEPTR9LBUY7DJGDRNZ
+
+
+
+
+

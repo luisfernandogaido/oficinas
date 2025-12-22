@@ -1,0 +1,24 @@
+.banner {
+    justify-content: center;
+}
+
+#ctn {
+    background: var(--fg);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#ctn :is(p, ol, h2, h3, ul) {
+    margin-bottom: 0.5rem;
+}
+
+#ctn h2 {
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width: 768px) {
+    #ctn {
+        width: 700px;
+        margin: auto;
+    }
+}

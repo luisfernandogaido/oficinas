@@ -1,0 +1,88 @@
+.modal {
+    display: none;
+    z-index: 11;
+}
+
+.modal.aberto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.dark .modal.aberto {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.modal section {
+    background: var(--bg);
+    padding: 1rem;
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
+}
+
+.dark .modal section {
+    box-shadow: 0 0 1rem black;
+}
+
+@media (min-width: 768px) {
+    .modal section {
+        width: auto;
+        height: auto;
+    }
+}
+
+body.modal-aberto {
+    overflow: hidden;
+    padding-right: var(--largura-scroll);
+}
+
+body.touch.modal-aberto, body.modo-foco.modal-aberto {
+    padding-right: 0;
+}
+
+body.scroll.modal-aberto header {
+    right: var(--largura-scroll);
+}
+
+body.touch.modal-aberto header {
+    right: 0;
+}
+
+.modal header {
+    display: flex;
+    height: auto;
+    padding: 0;
+    margin-bottom: 0.5rem;
+}
+
+.modal header h1 {
+    white-space: nowrap;
+    text-align: left;
+    font-size: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .modal header h1 {
+        white-space: nowrap;
+    }
+}
+
+.modal header .fechar {
+    margin-left: auto;
+    flex: 0 0 1.25rem;
+    height: 1.25rem;
+    background: url("../img/close-light-gray.svg?2") no-repeat center top;
+    background-size: contain;
+}
+
+.modal header .fechar:hover {
+    background-image: url("../img/close-gray.svg?2");
+}

@@ -1,0 +1,186 @@
+body {
+    --fundo: #f8f8f8;
+    background: var(--bg);
+    --tema: #01c0a1;
+}
+
+header {
+    background: var(--bg);
+}
+
+body > header menu {
+    background: var(--bg);
+}
+
+h1, h2, h3 {
+
+}
+
+a, a:hover {
+    color: var(--tema);
+}
+
+body > header menu a:hover {
+    background-color: #e5e5e5;
+}
+
+body > header a#logo, header a.logo {
+    background: url("../img/logo-horizontal.svg") no-repeat left center;
+    background-size: 8rem;
+}
+
+@media (min-width: 1024px) {
+    header a.logo {
+        flex: 0 0 9.5rem;
+    }
+
+    th {
+        background: var(--tema);
+        color: white;
+    }
+}
+
+body > header a#logo::before, header a.logo::before {
+    content: "";
+    display: none;
+}
+
+body > header > span.nome {
+    color: var(--tema);
+}
+
+body > header button.person-pin {
+    background-image: url("../img/person-pin-verde.svg");
+}
+
+body > header a.button.input {
+    background-image: url("../img/input-green.svg");
+}
+
+button:hover, a.button:hover {
+    background-color: #e5e5e5;
+}
+
+button.novo, a.button.novo, button.next, a.button.next {
+    background-color: var(--tema);
+}
+
+button.novo:active, a.button.novo:active, button.next:active, a.button.next:active {
+    background-color: var(--tema);
+}
+
+button.novo, a.button.novo {
+    background-image: url("../img/add-white.svg");
+}
+
+th {
+    background: var(--tema);
+    color: white;
+}
+
+td {
+    background: white;
+}
+
+.tabs > nav a {
+    background: #f1f1f1;
+    color: #737373;
+}
+
+.tabs > nav a:hover {
+    background: #f1f1f1;
+}
+
+.tabs > nav a.sel {
+    background-color: #f1f1f1;
+    border-bottom: 2px solid var(--tema);
+}
+
+.campos > .campo input, .campos > .campo textarea, .campos > .campo select {
+    background: #e8e8e8;
+}
+
+.campos > .campo input:hover, .campos > .campo textarea:hover, .campos > .campo select:hover {
+    background-color: #e0e0e0;
+}
+
+.campos > .campo input:focus, .campos > .campo textarea:focus, .campos > .campo select:focus {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid var(--tema);
+}
+
+#menu-tema, #menu-tema::before {
+    display: none;
+}
+
+button.filter.filtered, a.button.filter.filtered {
+    background-image: url("../img/filter-deep-blue.svg");
+}
+
+.botoes button.primario, .botoes a.button.primario, .butbot.primario {
+    background: var(--tema);
+}
+
+.botoes button.primario:hover, .botoes a.button.primario:hover, .butbot.primario:hover {
+    background: #22ab90;
+}
+
+.botoes button.primario:active, .botoes a.button.primario:active, .butbot.primario:active {
+    background: #1e967f;
+}
+
+#alerta .act > a {
+    color: var(--tema);
+}
+
+#loading, .loading {
+    background: url("../img/loading-white.svg") no-repeat center var(--tema);
+}
+
+table.cards td:before {
+    color: #63bfa9;
+}
+
+select, option {
+    background: white;
+}
+
+table.cards tr td, table.cards.mob tr td, table.cards.tab tr td, table tr {
+    background: white;
+}
+
+tr.sel,
+tr.sel th,
+tr.sel td,
+tr.sel:hover td,
+table.cards tr.sel td,
+table.cards.mob tr.sel td,
+table.cards.tab tr.sel td,
+table tr.sel {
+    background: #e8f0fe;
+}
+
+table.cards.tab td.acoes {
+    align-self: stretch;
+}
+
+button.toggle.on, a.button.toggle.on {
+    background-image: url("../img/toggle-on-green.svg");
+}
+
+button.tune.tuned, a.button.tune.tuned {
+    background-image: url("../img/tune-green.svg");
+}
+
+.shadow {
+    box-shadow: 1px 1px 4px #e0e0e0;
+}
+
+table.cards tr {
+    margin-bottom: 0.375rem;
+    border-radius: 2px;
+}
+
+button.check.checked, a.button.check.checked {
+    background-image: url("../img/check-checked-green.svg");
+}

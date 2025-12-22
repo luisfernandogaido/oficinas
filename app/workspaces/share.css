@@ -1,0 +1,28 @@
+.wrapper {
+    margin: auto;
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#qrcode img{
+    width: 100%;
+}
+
+@media screen and (min-width: 768px){
+    .wrapper {
+        width: 600px;
+    }
+}
+
+p.link {
+    font-weight: bold;
+    text-align: center;
+}
+
+p.explicacao {
+    text-align: center;
+}

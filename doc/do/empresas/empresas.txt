@@ -1,0 +1,13 @@
+passwd root: 8M8dJEfN5Ehm
+MongoDB pass: 8M8dJEfN5Ehm
+
+db.createUser(
+  {
+    user: "gaido",
+    pwd: "8M8dJEfN5Ehm",
+    roles: [ { role: "root", db: "admin" } ]
+  }
+)
+
+MongoDB URI:
+mongodb://gaido:8M8dJEfN5Ehm@164.90.134.86:27017/empresas?authSource=admin

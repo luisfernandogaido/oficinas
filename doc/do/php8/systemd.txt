@@ -1,0 +1,2 @@
+netstat -peanut | grep 4000
+None    proworker

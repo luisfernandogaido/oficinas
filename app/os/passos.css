@@ -1,0 +1,28 @@
+form {
+    background: var(--fg);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+.campos > .campo textarea {
+    height: 5.5rem;
+}
+
+.campos > .campo textarea.fluido {
+    min-height: 4rem;
+    max-height: 20vh;
+    field-sizing: content;
+    height: auto;
+}
+
+.botoes {
+    position: sticky;
+    bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    form {
+        width: 700px;
+    }
+}

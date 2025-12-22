@@ -1,0 +1,190 @@
+@import "status.css";
+
+#chips {
+    display: flex;
+    justify-content: center;
+    padding: 0.25rem;
+    margin: 0 auto 0.5rem auto;
+    position: sticky;
+    top: calc(var(--altura-header) - 5px);
+    background: var(--bg);
+    border-radius: 0.5rem;
+}
+
+#chips .chip {
+    border-radius: 0.5rem;
+    padding: 0.125rem 0.25rem;
+    height: auto;
+    width: auto;
+    flex: 1 0 0;
+    margin: 1px;
+    font-weight: bold;
+    border: 1px solid #AAAAAA;
+    font-size: 0.7rem;
+
+}
+
+div.cards > .card {
+    padding-bottom: 0.25rem;
+}
+
+#chips .chip.selected {
+    border: 1px solid #0b57d0;
+    color: #0b57d0;
+}
+
+.dark #chips .chip.selected {
+    border: 1px solid steelblue;
+    color: steelblue;
+}
+
+@media screen and (min-width: 360px) {
+    #chips .chip {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 432px) {
+    #chips .chip {
+        font-size: 0.9rem;
+    }
+}
+
+.dark #chips .chip {
+    border-color: #666666;
+}
+
+.card .field {
+    flex: 0 1 auto;
+    margin: 1px 1px 0.25rem 1px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.card :is(.field.os, .field.status) {
+    flex: 0 1 calc(100% / 4 - 2px);
+    justify-content: center;
+}
+
+.card :is(.field.modelo-placa) {
+    flex: 0 1 calc(100% / 2 - 2px);
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.card :is(.field.modelo-placa .modelo) {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.card  .field.modelo-placa .placa {
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: monospace;
+    font-weight: bold;
+    /*border: 1px solid black;*/
+    /*border-top: 6px solid blue;*/
+    /*border-radius: 4px;*/
+    /*padding: 0 0.4rem;*/
+    /*background: white;*/
+}
+
+.card .field.status {
+    text-align: center;
+    justify-content: flex-end;
+}
+
+.card .field.status span {
+    border-radius: 0.25rem;
+}
+
+.card :is(.field.cliente) {
+    flex: 0 1 calc(100% / 2 - 2px);
+}
+
+.card :is(.field.tempo, .field.valor) {
+    flex: 0 1 calc(100% / 4 - 2px);
+}
+
+.card :is(.field.tempo) {
+    justify-content: center;
+}
+
+.card :is(.field.valor) {
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+/*defina as larguras dos fields*/
+
+.cards .card * {
+    color: black;
+}
+
+.dark .cards .card * {
+    color: #b6c2cf;
+}
+
+@media screen and (min-width: 1024px) {
+    .card :is(.field.os, .field.modelo-placa, .field.status, .field.cliente, .field.tempo, .field.valor) {
+        flex: 0 0 calc(100% / 6 - 2px);
+    }
+
+    .card :is(.field.os, .field.modelo-placa) {
+        /*flex: 0 1 auto;*/
+    }
+
+    .card :is(.field.os) {
+        flex: 0 1 65px;
+    }
+
+    .card :is(.field.tempo, .field.valor) {
+        flex: 0 1 80px;
+    }
+
+    .card .field.status {
+        justify-content: center;
+        flex: 0 1 165px;
+    }
+
+    .card :is(.field.cliente) {
+        flex: 1 1 auto;
+    }
+
+    .card :is(.field.valor) {
+        margin-left: 1px;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .cards, #chips {
+        width: 700px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cards {
+        width: 900px;
+    }
+
+    .card .field.status {
+        margin: 1px 1rem;
+    }
+
+}
+
+header input[type=search] {
+    display: none !important;
+}
+
+.history main header input[type=search] {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.history main header > .banner {
+    display: none;
+}

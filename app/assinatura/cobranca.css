@@ -1,0 +1,32 @@
+header > .banner {
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    flex: 0 1 auto;
+}
+
+form img {
+    display: block;
+    height: 4rem;
+    margin: 0 auto 1rem auto;
+}
+
+.botoes button, .botoes a.button {
+    padding: 1.5rem;
+}
+
+#button-pagar {
+    width: 200px;
+    font-size: 1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    form {
+        width: 500px;
+        margin: auto;
+    }
+}
+

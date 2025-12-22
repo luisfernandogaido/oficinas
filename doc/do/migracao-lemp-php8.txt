@@ -1,0 +1,30 @@
+SISTEMAS:
+
+federal.gaido.dev                   MIGRAR APP DB
+gaido.dev                           MIGRAR APP DB
+itikawaimoveis.com.br               MIGRAR APP DB
+cadastroaprovado.com.br             MIGRAR APP DB
+consorcio.profinanc.com.br          MIGRAR APP DB
+abralatasweb.org.br                 MIGRAR APP
+hom.abralatasweb.org.br             MIGRAR APP
+odonto.gaido.dev                    MIGRAR APP
+sis-odc.com.br                      MIGRAR APP
+proworker (sem porta)               MIGRAR APP (NODB)
+pe (sem porta)                      MIGRAR APP (NODB)
+demo01.profinanc.com.br             MIGRAR APP (bugs)
+apucarana.profinanc.com.br          MIGRAR APP (bugs)
+apravel.profinanc.com.br            MIGRAR APP (bugs)
+testeatlas.profinanc.com.br         MATAR
+testegrupoatlas.profinanc.com.br    MATAR
+testebavep.profinanc.com.br         MATAR
+testegraciano.profinanc.com.br      MATAR
+sipoc.gaido.net.br                  MATAR
+
+CRON:
+
+# m h  dom mon dow   command
+0 22 * * * /root/go/bin/bkp
+# 0 3 * * * php /var/www/html/consorcio/cli/importa-cnc.cli.php &> /dev/null
+0 19 * * * php /var/www/html/abralatas/cli/importa-monitor-legislativo.cli.php &> /dev/null
+0 4 * * * php /var/www/html/consorcio/cli/atualiza-estados.cli.php &> /dev/null
+0 16 * * * php /var/www/html/consorcio/cli/atualiza-estados.cli.php &> /dev/null

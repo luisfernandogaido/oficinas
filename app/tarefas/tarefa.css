@@ -1,0 +1,98 @@
+.botoes {
+    justify-content: flex-start;
+    position: fixed;
+    width: calc(100% - 2rem);
+    bottom: 0.5rem;
+}
+
+#b-voltar {
+    display: none;
+}
+
+form {
+    background: var(--fg);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+
+@media (min-width: 768px) {
+    form {
+        width: 400px;
+        margin: auto;
+    }
+
+    .botoes {
+        position: static;
+        width: auto;
+        bottom: auto;
+    }
+
+    #b-voltar {
+        display: flex;
+    }
+
+
+}
+
+#b-excluir {
+    margin-left: auto;
+}
+
+button.paste {
+    margin-left: auto;
+}
+
+button.start {
+    border: 1px solid #cccccc;
+    margin: 1rem auto;
+    padding: 2rem 4rem;
+    flex: 0 1 4rem;
+    width: 4rem;
+    color: #555555;
+    font-weight: bold;
+}
+
+button.start:before {
+    content: "Start";
+}
+
+.started button.start {
+    color: #feffff;
+    background-color: #3594d4;
+    border-color: #327aac;
+}
+
+.started button.start:active {
+    background-color: #0069b0;
+    border-color: #005188;
+}
+
+.started button.start:before {
+    content: "Stop";
+}
+
+
+#tempo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #444444;
+    text-align: center;
+}
+
+#c-trello .controle {
+    flex-wrap: wrap;
+}
+
+#trello-cards {
+    flex: 1 1 100%;
+}
+
+.trello-card {
+    display: flex;
+    align-items: center;
+}
+
+.trello-card > a {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,36 @@
+#qrcode img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+#qrcode h1 {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#qrcode p {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    #qrcode {
+        width: 500px;
+        margin: auto;
+    }
+}
+
+@media print {
+    header {
+        display: none;
+    }
+
+    #qrcode h1 {
+        font-size: 1.5rem;
+    }
+
+    #qrcode p, .botoes {
+        display: none;
+    }
+
+}

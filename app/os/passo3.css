@@ -1,0 +1,10 @@
+.campos > .campo.frequencia .checks label {
+    flex: 1 1 100%;
+}
+
+@media screen and (min-width: 419px) {
+    .campos > .campo.frequencia .checks label {
+        flex: 0 1 calc(100% / 3 - 2px);
+    }
+
+}

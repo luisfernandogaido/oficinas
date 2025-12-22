@@ -1,0 +1,119 @@
+.campos {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.campos > .campo {
+    flex: 1 1 100%;
+}
+
+.campos > .campo input[type=radio]:focus, .campos > .campo input[type=checkbox]:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.campos > .campo input[type=number] {
+    text-align: right;
+    -moz-appearance: textfield;
+}
+
+.campos > .campo input.moeda {
+    text-align: right;
+}
+
+.campos > .campo input[type=number]::-webkit-inner-spin-button,
+.campos > .campo input[type=month]::-webkit-inner-spin-button,
+.campos > .campo input[type=date]::-webkit-inner-spin-button {
+
+}
+
+.campos > .campo input[type=range] {
+    -webkit-appearance: none;
+}
+
+.campos > .campo input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 1px solid #8e8e8e;
+    border-radius: 50%;
+    background: #8e8e8e;
+    margin-top: -10px;
+}
+
+.campos > .campo input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    background: #8e8e8e;
+    border-radius: 5px;
+    height: 4px;
+    margin: 0.6rem;
+}
+
+.campos > .campo input[type=range]::-moz-range-thumb {
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 1px solid #8e8e8e;
+    border-radius: 50%;
+    background: #8e8e8e;
+}
+
+.campos > .campo input[type=range]::-moz-range-track {
+    background: #8e8e8e;
+    border-radius: 5px;
+    height: 4px;
+}
+
+.campos > .campo > .rotulo {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0.25rem 0;
+    margin-bottom: 0.25rem;
+}
+
+.campos > .campo > .rotulo label {
+    margin-right: 0.5rem;
+}
+
+.campos > .campo > .controle {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.campos > .campo > .controle.linhas {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.campos > .campo > .controle label {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    padding: 0.4rem;
+}
+
+@media (min-width: 1024px) {
+    .campos > .campo > .controle label {
+        padding: 0.1rem;
+    }
+}
+
+.campos > .campo > .controle input[type=radio], .campos > .campo > .controle input[type=checkbox] {
+    margin-right: 0.25rem;
+}
+
+.campos > .campo > .mensagem {
+    font-style: italic;
+    color: #222222;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.campos > .campo > .mensagem * {
+    font-size: 0.8rem;
+}
+
+.dark .campos > .campo > .mensagem {
+    color: #8394a0;
+}

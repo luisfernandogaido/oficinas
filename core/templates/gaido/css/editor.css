@@ -1,0 +1,317 @@
+.editor {
+    background: var(--bg);
+    /*border: 1px solid #ecedee;*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);*/
+}
+
+.dark .editor {
+    /*border: 1px solid #515151;*/
+}
+
+.editor * {
+    font-family: inherit;
+}
+
+.editor > .conteudo {
+    border: none;
+    padding: 1rem;
+    overflow: auto;
+    outline: none;
+    position: relative;
+}
+
+.editor > .conteudo * {
+}
+
+.editor .controles {
+    display: flex;
+    position: sticky;
+    top: calc(var(--altura-header) - 1px);
+    background: var(--bg);
+    user-select: none;
+    padding: 0.5rem 0;
+    overflow-x: auto;
+    border-bottom: 1px solid #ecedee;
+    z-index: 2;
+}
+
+.dark .editor .controles {
+    border-bottom: 1px solid #515151;
+    border-right: none;
+    border-left: none;
+}
+
+.editor .controles button {
+    height: 2.5rem;
+    flex: 0 0 2.5rem;
+    padding: 0;
+    margin: 1px;
+}
+
+@media screen and (min-width: 768px) {
+    .editor .controles button {
+        height: 1.75rem;
+        flex: 0 0 1.75rem;
+    }
+}
+
+.editor .controles button.negrito {
+    background: url("../img/format-bold.svg") no-repeat center;
+}
+
+.editor .controles button.italico {
+    background: url("../img/format-italic.svg") no-repeat center;
+}
+
+.editor .controles button.tachado {
+    background: url("../img/format-strikethrough.svg") no-repeat center;
+}
+
+.editor .controles button.alinhar-esquerda {
+    background: url("../img/format-align-left.svg") no-repeat center;
+}
+
+.editor .controles button.centralizar {
+    background: url("../img/format-align-center.svg") no-repeat center;
+}
+
+.editor .controles button.alinhar-direita {
+    background: url("../img/format-align-rigth.svg") no-repeat center;
+}
+
+.editor .controles button.h1 {
+    background: url("../img/looks-one.svg") no-repeat center;
+}
+
+.editor .controles button.h2 {
+    background: url("../img/looks-two.svg") no-repeat center;
+}
+
+.editor .controles button.h3 {
+    background: url("../img/looks-3.svg") no-repeat center;
+}
+
+.editor .controles button.format-indent {
+    background: url("../img/format-indent-increase.svg") no-repeat center;
+}
+
+.editor .controles button.format-outdent {
+    background: url("../img/format-indent-decrease.svg") no-repeat center;
+}
+
+.editor .controles button.citacao {
+    background: url("../img/format-quote.svg") no-repeat center;
+}
+
+.editor .controles button.codigo {
+    background: url("../img/code.svg") no-repeat center;
+}
+
+.editor .controles button.linque {
+    background: url("../img/link.svg") no-repeat center;
+}
+
+.editor .controles button.limpar-formatacao {
+    background: url("../img/format-clear.svg") no-repeat center;
+}
+
+.editor .controles button.lista-nao-ordenada {
+    background: url("../img/list-bulleted.svg") no-repeat center;
+}
+
+.editor .controles button.lista-ordenada {
+    background: url("../img/list-numbered.svg") no-repeat center;
+}
+
+.editor .controles button.enviar-arquivo {
+    background: url("../img/file-upload.svg") no-repeat center;
+}
+
+.editor .controles button.pesquisar-arquivo {
+    background: url("../img/search.svg") no-repeat center;
+}
+
+.editor .controles button:hover {
+    background-color: #f1f3f4;
+}
+
+.dark .editor .controles button:hover {
+    background-color: #0b1117;
+}
+
+.editor .controles button:active, .editor .controles button.active {
+    background-color: #e8f0fe;
+}
+
+.dark .editor .controles button:active, .dark .editor .controles button.active {
+    background-color: #06090c;
+}
+
+.editor h1, .editor h1 * {
+    font-size: 2.5rem;
+}
+
+.editor h2, .editor h2 * {
+    font-size: 1.5rem;
+}
+
+.editor h3, .editor h3 * {
+    font-size: 1.25rem;
+}
+
+.editor pre {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.editor pre, .editor pre * {
+    font-family: monospace;
+}
+
+.editor .retratil {
+    top: calc(var(--altura-header) + 1px);
+    height: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    transition: top 0.25s, height 0.25s;
+    background: var(--bg);
+    max-height: 50%;
+    overflow: hidden;
+    border-bottom: 1px solid #ecedee;
+    display: none;
+}
+
+.dark .editor .retratil {
+    border: 1px solid transparent;
+    border-bottom: 1px solid #515151;
+    border-left: none;
+    border-right: none;
+}
+
+.editor .retratil.open {
+    display: flex;
+    flex-flow: row wrap;
+    height: auto;
+    /*box-shadow: 0 2px 2px rgba(0, 0, 0, .1), 0 8px 8px rgba(0, 0, 0, .1);    */
+}
+
+.editor .retratil > div {
+    flex: 1 1 100%;
+    padding: 0.1rem;
+}
+
+.editor .retratil > div input {
+    width: 100%;
+}
+
+.editor input:not([type=radio]):not([type=checkbox]):not([type=file]), select, textarea {
+    border-radius: 4px;
+}
+
+.editor .retratil .ctn-link {
+    align-items: center;
+    display: flex;
+}
+
+.editor .retratil .ctn-link button {
+    border: none;
+}
+
+.editor .ctn-figure {
+    text-align: center;
+}
+
+.editor figure {
+    border: 1px solid #c0c0c0;
+    padding: 0.25rem;
+    display: inline-block;
+}
+
+.dark .editor figure {
+    border: 1px solid #0b1117;
+}
+
+.editor > .conteudo figure figcaption {
+    font-style: italic;
+    background: #222222;
+    color: white;
+    padding: 0.25rem;
+}
+
+.editor img {
+    display: block;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 400px;
+    margin: auto;
+    cursor: default;
+}
+
+video {
+    display: block;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    margin-left: auto;
+}
+
+
+@media screen and (min-height: 768px) {
+    .editor img {
+        max-height: calc(100vh - 16rem);
+    }
+    video {
+        max-height: calc(100vh - 16rem);
+    }
+}
+
+
+.editor tr, .editor tbody tr:last-child {
+    border: none;
+
+}
+
+.editor :is(th, td) {
+    border: 1px solid black;
+}
+
+.editor tr:hover td {
+    background: transparent;
+}
+
+.bubble {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--bg);
+    border-radius: 4px;
+    display: none;
+    padding: 1rem;
+}
+
+.bubble.show {
+    display: flex;
+}
+
+.bubble.img a {
+    margin: 0 0.25rem;
+}
+
+@media screen and (min-height: 768px) {
+    .bubble {
+        /*padding: 0.5rem;*/
+    }
+}
+
+#loading.visivel {
+    display: none;
+}
+
+.editor iframe.yt, video {
+    display: block;
+    margin: 1rem auto;
+}

@@ -1,0 +1,69 @@
+header > .banner {
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    flex: 0 1 auto;
+}
+
+.campos > .campo > .controle input[type=radio] {
+    display: none;
+}
+
+.campos > :is(.campo#campo-periodo, .campo#campo-tipo) .controle.checks label {
+    flex: 1 0 0;
+    padding: 1.5rem 0.75rem;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.campos > .campo#campo-valor > .controle {
+    justify-content: center;
+}
+
+#campo-valor span {
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: #6c2e7c;
+}
+
+.dica {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form img {
+    display: block;
+    height: 4rem;
+    margin: 0 auto 1rem auto;
+}
+
+#button-gerar-cobranca {
+    width: 200px;
+    font-size: 1rem;
+}
+
+.botoes button, .botoes a.button {
+    padding: 1.5rem;
+}
+
+.campos > p {
+    flex: 1 1 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.campos > p.argumento {
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 768px) {
+    form {
+        width: 500px;
+        margin: auto;
+    }
+}

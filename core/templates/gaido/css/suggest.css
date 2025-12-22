@@ -1,0 +1,47 @@
+.suggest {
+    display: flex;
+    position: relative;
+}
+
+.suggest .lista {
+    position: absolute;
+    top: 2rem;
+    left: -1px;
+    width: calc(100% + 2px);
+    border: 1px solid #eaeaeb;
+    box-shadow: 0 0.5rem 0.5rem #eaeaeb;
+    background: white;
+    overflow: auto;
+    z-index: 6;
+}
+
+.suggest .lista a {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+    color: black;
+}
+
+@media (min-width: 1024px) {
+    .suggest .lista a {
+        padding: 0.5rem;
+    }
+}
+
+.suggest .lista a.hover {
+    background-color: #eeeeee;
+}
+
+.dark .suggest .lista {
+    background: var(--fg);
+    border: 1px solid black;
+    box-shadow: 0 0.5rem 0.5rem black;
+}
+
+.dark .suggest .lista a {
+    color: #b6bfc8;
+}
+
+.dark .suggest .lista a.hover {
+    background-color: #192734;
+}

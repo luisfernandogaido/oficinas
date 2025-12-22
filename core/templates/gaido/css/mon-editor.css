@@ -1,0 +1,34 @@
+.editor {
+    width: 100%;
+}
+
+.editor .acoes {
+    display: flex;
+    position: sticky;
+    top: calc(var(--altura-header));
+    background: var(--bg);
+    border-top: 1px solid #dadce0;
+    border-bottom: 1px solid #dadce0;
+}
+
+[contenteditable=true] {
+    outline: none;
+    display: block;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    color: #626262;
+}
+
+.dark [contenteditable=true] {
+    border: 1px solid #05070a;
+}
+
+.editor a {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+.editor a:hover {
+    color: #1a73e8;
+}

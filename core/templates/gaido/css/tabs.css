@@ -1,0 +1,67 @@
+.tabs > nav {
+    background: var(--bg);
+    position: sticky;
+    top: var(--altura-header);
+    display: flex;
+    overflow-x: scroll;
+    align-items: stretch;
+    border-top: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.tabs > nav::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.tabs > nav a {
+    color: #646464;
+    padding: 1rem;
+    flex: 1 0 0;
+    text-align: center;
+    user-select: none;
+    border-bottom: 2px solid transparent;
+    transition: 0.15s ease-in-out border-bottom-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs > nav a:hover {
+    background: #f6f4f9;
+}
+
+.dark .tabs > nav a:hover {
+    background: #162d40;
+    color: #646464
+}
+
+.tabs > nav a.sel {
+    background: #fcfaff;
+    border-bottom: 2px solid #904ac2;
+}
+
+.dark .tabs > nav a.sel {
+    background: #162d40;
+}
+
+@media (min-width: 1024px) {
+    .tabs > nav {
+        justify-content: center;
+        overflow: visible;
+    }
+
+    .tabs > nav a {
+        flex: 0 0 auto;
+        padding: 0.5rem 1rem;
+    }
+}
+
+.tabs > section > div {
+    display: none;
+    padding: 1rem;
+}
+
+.tabs > section > div.sel {
+    display: block;
+}

@@ -1,0 +1,279 @@
+header {
+    background: var(--bg);
+    height: var(--altura-header);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 0.75rem;
+}
+
+header.estatico, .modal header {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    border-bottom-color: white;
+    background: var(--fg);
+}
+
+.dark header.estatico, .modal header {
+    background: #1b1b1b;
+}
+
+header > a {
+    color: #5f6368;
+}
+
+body > header a#logo, header a.logo {
+    flex: 1 1 auto;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #787C80;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: url("../img/gaido.png") no-repeat center left;
+    background-size: 3.25rem;
+}
+
+body.dark > header a#logo, .dark header a.logo {
+    background-image: url("../img/gaido-light.png");
+}
+
+header a.logo {
+    display: none;
+}
+
+header.estatico a.logo {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+@media (min-width: 1024px) {
+    header a.logo {
+        display: flex;
+        flex: 0 0 7rem;
+    }
+}
+
+body > header a#logo::before, header a.logo::before {
+    /*content: "gaido";*/
+}
+
+body > header > span.nome {
+    display: none;
+    color: grey;
+}
+
+@media (min-width: 768px) {
+    body > header > span.nome {
+        display: block;
+    }
+}
+
+body > header menu {
+    position: fixed;
+    top: 0;
+    left: calc(-85vw - 1rem);
+    width: 85vw;
+    bottom: 0;
+    background: var(--fg);
+    transition: .25s left;
+    transition-timing-function: ease-in-out;
+    box-shadow: 0 0.6rem 0.6rem #cccccc;
+    border-right: 1px solid transparent;
+    overflow: auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+body.dark > header menu {
+    box-shadow: none;
+    /*border-right: 1px solid #38444d;*/
+    background: #1b1b1b;
+}
+
+@media (min-width: 1024px) {
+    body > header menu {
+        box-shadow: 0 0.1rem 0.2rem #dddddd;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    header menu header {
+        margin-bottom: 7px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    body > header menu {
+        left: calc(-17rem - 1rem);
+        width: 17rem;
+    }
+}
+
+body > header menu.aberto {
+    left: 0;
+}
+
+body > header menu section {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #dadce0;
+}
+
+body.dark > header menu section {
+    border-bottom: 1px solid #38444d;
+}
+
+body > header menu section:last-child {
+    border-bottom: none;
+}
+
+body > header menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    user-select: none;
+    color: var(--tema);
+}
+
+body > header menu a:hover {
+    color: var(--tema);
+}
+
+body > header menu a:not([href]) {
+    background-image: url("../img/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+body > header menu a.aberto:not([href]) {
+    background-image: url("../img/arrow-up.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+body > header menu a:hover {
+    background-color: var(--fgh);
+}
+
+body.dark > header menu a:hover {
+    color: white;
+}
+
+body > header menu a:active {
+    background-color: var(--fga);
+}
+
+body > header menu a.logo {
+    padding: 0;
+}
+
+body > header menu a.logo:hover {
+    background-color: transparent;
+}
+
+@media (min-width: 768px) {
+
+    body > header menu a {
+        display: block;
+        padding: 0.5rem 1rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    body > header menu a {
+        padding: 0.75rem 1rem;
+    }
+}
+
+body > header menu div {
+    height: 0;
+    overflow: hidden;
+    transition: all ease-in-out 0.25s;
+}
+
+body > header menu div.aberto {
+    height: auto;
+}
+
+body > header menu div a {
+    font-weight: normal;
+    padding: 0.75rem 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    body > header menu div a {
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+body > header .buttons .gerenciar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+
+    body > header .buttons .nome {
+        display: none;
+    }
+
+    body > header .buttons .gerenciar {
+        display: flex;
+    }
+
+}
+
+header > .banner, .dark header > .banner {
+    flex: 1 1 auto;
+    display: flex;
+    border: none;
+    padding: 0;
+}
+
+header > .banner > h1 {
+    flex: 1 1 auto;
+    display: flex;
+    font-size: 1.1rem;
+
+}
+
+#menu-tema::before {
+    content: "Tema Dark";
+}
+
+.dark #menu-tema::before {
+    content: "Tema Light";
+}
+
+main header input[type=search]:not([type=checkbox]):not([type=radio]):not([type=range]) {
+    width: 0;
+    flex: 1 1 auto;
+    padding: 0.75rem 1rem;
+    border-radius: 1.5rem;
+    background: #f9f8fe;
+    border: none;
+}
+
+.dark main header input[type=search]:not([type=checkbox]):not([type=radio]):not([type=range]) {
+    background: #38393e;
+    border: none;
+}
+
+
+@media (min-width: 1024px) {
+    @media (min-width: 1024px) {
+        main header input[type=search]:not([type=checkbox]):not([type=radio]):not([type=range]) {
+            flex: 0 0 600px;
+        }
+    }
+}

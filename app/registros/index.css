@@ -1,0 +1,45 @@
+:is(#controles, #controles-type) label {
+    flex: 1 1 0;
+    padding: 1rem 0;
+}
+
+#controles-type {
+    background: var(--bg);
+}
+
+#resultado {
+
+}
+
+@media screen and (min-width: 768px) {
+    #controles, #resultado {
+        width: 500px;
+        margin: auto;
+    }
+}
+
+#f-agua label {
+    padding: 1rem 0.75rem;
+}
+
+form {
+    background: var(--fg);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    form {
+        width: 500px;
+        margin: auto;
+    }
+}
+
+:is(.resultado, #resultado) > .horas {
+    text-align: center;
+
+}
+
+table {
+    margin-top: 0;
+}

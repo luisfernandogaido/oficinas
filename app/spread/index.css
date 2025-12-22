@@ -1,0 +1,71 @@
+:is(#share,#qrcode) p.atencao {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#share .meios {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#share .meio {
+    flex: 0 1 calc(50% - 8px);
+    margin: 4px;
+    aspect-ratio: 1;
+    border: 2px solid #6c2e7c;
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background: #eaeaea;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h2 {
+    text-align: center;
+}
+
+#share .meio:hover {
+    background: #cccccc;
+}
+
+.dark #share .meio {
+    background: transparent;
+}
+
+.dark #share .meio:hover {
+    background: #0c1319;
+}
+
+#share .meio img {
+    display: block;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+#qrcode img {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+#usuarios td {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.25rem;
+}
+
+@media screen and (min-width: 768px) {
+    #share, #promocao {
+        width: 500px;
+        margin: auto;
+    }
+    #qrcode img {
+        display: block;
+        width: 100%;
+    }
+}
+

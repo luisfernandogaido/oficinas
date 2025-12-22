@@ -1,0 +1,55 @@
+baixe /var/log/mongodb/mongod.log em desktop
+cd C:\Users\lfgai\Desktop
+mongoimport --db logs --collection mongodb --drop --numInsertionWorkers=4 --file mongod.log
+db.mongodb.aggregate([
+    {$match: {
+        t: {
+            $gte: ISODate("2023-07-17T00:00:00.000-03:00"),
+            $lte: ISODate("2023-07-17T23:59:59.999-03:00")
+        },
+        msg: "Slow query"
+    }},
+    {$group: {
+        _id: "$attr.ns",
+        count: {$sum: 1},
+        duration_millis: {$sum: "$attr.durationMillis"}}
+    },
+    {$sort: {duration_millis: -1}}
+]);
+db.mongodb.find({
+       t: {$gte: ISODate("2021-10-01T00:00:00.000-03:00")},
+       msg: "Slow query"
+   }, {
+       attr: 1
+   }).sort({"attr.durationMillis": -1});
+
+db.mongodb.find({
+    t: {$gte: ISODate("2021-12-28T00:00:00.000-03:00")},
+    "attr.ns": "agentefederal.projetos",
+    msg: "Slow query"
+}).sort({"attr.durationMillis": -1});
+mongotop 300 --uri='mongodb://gaido:1000sonhosreais@167.99.55.99:27017/cnc?authSource=admin'
+mongostat --uri='mongodb://gaido:1000sonhosreais@167.99.55.99:27017/cnc?authSource=admin' 300
+db.enableFreeMonitoring();
+db.disableFreeMonitoring();
+db.serverStatus();
+db.currentOp();
+db.currentOp({secs_running: {$gte: 5}});
+db.stats(1024*1024);
+db.access.stats({scale: 1024*1024});
+
+db.setProfilingLevel(0);
+db.system.profile.drop();
+db.setProfilingLevel(1, { slowms: 100, sampleRate: 0.1 });
+db.getProfilingStatus();
+db.system.profile.find().sort( { ts : -1 } );
+
+logs:
+db.adminCommand( { logRotate : 1 } )
+/var/log/mongodb
+https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-message-slow-ops
+
+jq '. | select(.attr.durationMillis>=2000)' /var/log/mongodb/mongod.log
+
+
+

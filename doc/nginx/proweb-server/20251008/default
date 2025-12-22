@@ -1,0 +1,213 @@
+server {
+    listen 80
+    default_server;
+    server_name _;
+    root /var/www/html;
+    index index.html index.php;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+server {
+    server_name proweb.profinanc.com.br;
+    root /var/www/html/proweb;
+    index index.html index.php;
+    client_max_body_size 20M;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        access_log /var/log/nginx/proweb-access.log custom;
+        error_log /var/log/nginx/proweb-error.log;
+
+        fastcgi_param EMAIL_USER "noreply@profinanc.com.br";
+        fastcgi_param EMAIL_PROVIDER "microsoft";
+        fastcgi_param PROWEB_MYSQL_HOST "localhost";
+        fastcgi_param PROWEB_MYSQL_USER "proweb";
+        fastcgi_param PROWEB_MYSQL_PASS "w9wDiXHPvE";
+        fastcgi_param PROWEB_MYSQL_BASE "proweb";
+        
+    }
+    location ~* \.(js|css|png|jpg|jpeg|gif|svg|ico)$ {
+        expires 15m;
+        add_header Cache-Control "public, no-transform";
+    }
+    rewrite ^/home/(.*)$ /app/home.php?u=$1 last;
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/proweb.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/proweb.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = proweb.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    listen 80 ;
+    server_name proweb.profinanc.com.br;
+    return 404; # managed by Certbot
+}
+server {
+    server_name bi.profinanc.com.br;
+    root /var/www/html/bi;
+    index index.html index.php;
+    client_max_body_size 20M;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        access_log /var/log/nginx/bi-access.log combined;
+        error_log /var/log/nginx/bi-error.log;
+
+        fastcgi_param EMAIL_USER "noreply@profinanc.com.br";
+        fastcgi_param EMAIL_PROVIDER "microsoft";
+
+        fastcgi_param BI_MYSQL_HOST "localhost";
+        fastcgi_param BI_MYSQL_USER "bi";
+        fastcgi_param BI_MYSQL_PASS "w9wDiXHPvE";
+        fastcgi_param BI_MYSQL_BASE "bi";
+    }
+    location ~* \.(js|css|png|jpg|jpeg|gif|svg|ico)$ {
+        expires 15m;
+        add_header Cache-Control "public, no-transform";
+    }
+    rewrite ^/home/(.*)$ /app/home.php?u=$1 last;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/bi.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/bi.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = bi.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    server_name bi.profinanc.com.br;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name consorciohom.profinanc.com.br;
+    root /var/www/html/consorciohom;
+    index index.html index.php;
+    client_max_body_size 20M;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        access_log /var/log/nginx/consorciohom-access.log combined;
+        error_log /var/log/nginx/consorciohom-error.log;
+    }
+    location ~* \.(js|css|png|jpg|jpeg|gif|svg|ico)$ {
+        expires 15m;
+        add_header Cache-Control "public, no-transform";
+    }
+    rewrite ^/home/(.*)$ /app/home.php?u=$1 last;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/consorciohom.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/consorciohom.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = consorciohom.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    server_name consorciohom.profinanc.com.br;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name proweb2.profinanc.com.br;
+    root /var/www/html/proweb2;
+    index index.html index.php;
+    client_max_body_size 20M;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        access_log /var/log/nginx/demo-proweb-access.log combined;
+        error_log /var/log/nginx/demo-proweb-error.log;
+
+        fastcgi_param EMAIL_USER "noreply@profinanc.com.br";
+        fastcgi_param EMAIL_PROVIDER "microsoft";
+        fastcgi_param PROWEB_MYSQL_HOST "localhost";
+        fastcgi_param PROWEB_MYSQL_USER "proweb";
+        fastcgi_param PROWEB_MYSQL_PASS "w9wDiXHPvE";
+        fastcgi_param PROWEB_MYSQL_BASE "proweb2";
+
+    }
+    location ~* \.(js|css|png|jpg|jpeg|gif|svg|ico)$ {
+        expires 15m;
+        add_header Cache-Control "public, no-transform";
+    }
+    rewrite ^/home/(.*)$ /app/home.php?u=$1 last;
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/proweb2.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/proweb2.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = proweb2.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    server_name proweb2.profinanc.com.br;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name profinanc.com.br site.profinanc.com.br;
+    root /var/www/html/profinanc_site;
+    index index.html index.php;
+    client_max_body_size 20M;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        access_log /var/log/nginx/profinanc_site-access.log combined;
+        error_log /var/log/nginx/profinanc_site-error.log;
+    }
+    location ~* \.(js|css|png|jpg|jpeg|gif|svg|ico)$ {
+        expires 15m;
+        add_header Cache-Control "public, no-transform";
+    }
+    rewrite ^/home/(.*)$ /app/home.php?u=$1 last;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/site.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/site.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    if ($host = site.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    server_name profinanc.com.br site.profinanc.com.br;
+    listen 80;
+    return 404; # managed by Certbot
+}

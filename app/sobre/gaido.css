@@ -1,0 +1,34 @@
+#ctn img {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+
+@media screen and (min-width: 768px){
+    #ctn {
+        width: 700px;
+        margin: auto;
+    }
+
+    #ctn img {
+        display: block;
+        width: 50%;
+        margin: auto;
+    }
+
+}
+
+h2 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+#email {
+    margin: 1rem;
+    text-align: center;
+}
+
+.botoes {
+    margin: 1rem;
+}
+

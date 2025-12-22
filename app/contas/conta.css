@@ -1,0 +1,14 @@
+form .botoes button, form .botoes a.button {
+    flex: 1 1 0;
+}
+
+@media (min-width: 1024px) {
+    form {
+        width: 400px;
+        margin: auto;
+    }
+
+    form .botoes button, form .botoes a.button {
+        flex: 0 0 100px;
+    }
+}

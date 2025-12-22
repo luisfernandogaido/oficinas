@@ -1,0 +1,1237 @@
+:root {
+    --lado-botao: 3rem;
+}
+
+button, a.button {
+    background: no-repeat center;
+    flex: 0 0 var(--lado-botao);
+    height: var(--lado-botao);
+    width: var(--lado-botao);
+    border: 1px solid transparent;
+    outline: none;
+    padding: 0 0.5rem;
+    white-space: nowrap;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button.flat, a.button.flat {
+    margin: 0 2px;
+    border: 1px solid #c4c4c4;
+    font-size: 0.8rem;
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    button.flat, a.button.flat {
+        height: 2.1rem;
+    }
+}
+
+.dark button.flat, .dark a.button.flat {
+    border-color: #5e6060;
+}
+
+.dark .botoes button.flat, .dark .botoes a.button.flat {
+    border-color: transparent;
+}
+
+button:hover, a.button:hover {
+    background-color: var(--bgh);
+}
+
+.buttons :is(button:hover, a.button:hover) {
+    background-color: var(--fgh);
+}
+
+button:active, a.button:active {
+    background-color: var(--bga);
+}
+
+.dark button.flat:active, .dark a.button.flat:active {
+    border: 1px solid #d9d9db;
+}
+
+button:focus, a.button:focus {
+    border: 1px solid black;
+}
+
+button.primario:focus, a.button.primario:focus {
+    box-shadow: 0 0 1px 1px #1a73e8;
+}
+
+button.perigo:focus, a.button.perigo:focus {
+    box-shadow: 0 0 1px 1px #dc3545;
+}
+
+
+button.flat:focus, a.button.flat:focus {
+    box-shadow: none;
+}
+
+button.flat.sel, a.button.flat.sel {
+    background: #e4e4e4;
+    border-color: #bdc1c6;
+}
+
+.dark button.flat.sel, .dark a.button.flat.sel {
+    color: white;
+    border-color: transparent;
+    background-color: #162d40;
+}
+
+.dark button:focus, .dark a.button:focus {
+    border: 1px solid black;
+}
+
+.dark button, .dark a.button {
+    border: 1px solid transparent;
+}
+
+.dark button:active, .dark a.button:active {
+    border: 1px solid #d9d9db;
+}
+
+.dark .buttons button:active, .dark .buttons a.button:active {
+    border: 1px solid transparent;
+}
+
+.dark button.flat:focus, .dark a.button.flat:focus {
+    box-shadow: none;
+}
+
+button.round, a.button.round,
+button.menu, a.button.menu,
+button.mais, a.button.mais,
+button.voltar, a.button.voltar,
+button.docar, a.button.docar,
+button.person-pin, a.button.person-pin,
+button.search, a.button.search,
+button.checkbox, a.button.checkbox,
+button.edit, a.button.edit,
+button.analise, a.button.analise,
+button.delete, a.button.delete,
+button.input, a.button.input,
+button.novo, a.button.novo,
+button.next, a.button.next,
+button.person, a.button.person,
+button.check, a.button.check,
+button.filter, a.button.filter,
+button.tune, a.button.tune,
+button.share, a.button.share,
+button.send, a.button.send,
+button.swap, a.button.swap,
+button.assignment, a.button.assignment,
+button.thumb-up, a.button.thumb-up,
+button.thumb-down, a.button.thumb-down,
+button.thumbs-up-down, a.button.thumbs-up-down,
+button.add, a.button.add,
+button.skip-previous, a.button.skip-previous,
+button.skip-next, a.button.skip-next,
+button.toggle, a.button.toggle,
+button.navigate-before, a.button.navigate-before,
+button.navigate-next, a.button.navigate-next,
+button.print, a.button.print,
+button.excel, a.button.excel,
+button.clear, a.button.clear,
+button.open-in-new, a.button.open-in-new,
+button.download, a.button.download,
+button.upload, a.button.upload,
+button.view, a.button.view,
+button.plus, a.button.plus,
+button.minus, a.button.minus,
+button.renew, a.button.renew,
+button.close, a.button.close,
+button.config, a.button.config,
+button.paste, a.button.paste,
+button.pass, a.button.pass,
+button.copy, a.button.copy,
+button.bug, a.button.bug,
+button.save, a.button.save,
+button.archive, a.button.archive,
+button.group, a.button.group,
+button.help, a.button.help,
+button.lock, a.button.lock,
+button.info, a.button.info,
+button.money, a.button.money,
+button.clean, a.button.clean,
+button.history, a.button.history,
+button.new, a.button.new,
+button.ticket, a.button.ticket,
+button.wallet, a.button.wallet,
+button.file-download, a.button.file-download,
+button.toggle, a.button.toggle,
+button.description, a.button.description,
+button.update, a.button.update,
+button.arrow-up, a.button.arrow-up,
+button.arrow-down, a.button.arrow-down,
+button.arrow-right, a.button.arrow-right,
+button.cable, a.button.cable,
+button.person-light, a.button.person-light,
+button.bold, a.button.bold,
+button.link, a.button.link,
+button.format-clear, a.button.format-clear,
+button.view-day, a.button.view-day,
+button.table-view, a.button.table-view,
+button.public, a.button.public,
+button.notifications, a.button.notifications,
+button.expand, a.button.expand,
+button.compress, a.button.compress,
+button.attachment, a.button.attachment,
+button.attach, a.button.attach,
+button.rename, a.button.rename,
+button.calc, a.button.calc,
+button.train, a.button.train,
+button.pending, a.button.pending,
+button.more, a.button.more,
+button.asc, a.button.asc,
+button.desc, a.button.desc,
+button.whatsapp, a.button.whatsapp,
+button.calendar-edit, a.button.calendar-edit,
+button.italic, a.button.italic,
+button.looks-one, a.button.looks-one,
+button.looks-two, a.button.looks-two,
+button.looks-3, a.button.looks-3,
+button.looks-4, a.button.looks-4,
+button.looks-5, a.button.looks-5,
+button.looks-6, a.button.looks-6,
+button.strikethrough, a.button.strikethrough,
+button.format-align-left, a.button.format-align-left,
+button.format-align-center, a.button.format-align-center,
+button.format-align-right, a.button.format-align-right,
+button.indent, a.button.indent,
+button.outdent, a.button.outdent,
+button.code, a.button.code,
+button.quote, a.button.quote,
+button.folder, a.button.folder,
+button.list-bulleted, a.button.list-bulleted,
+button.list-numbered, a.button.list-numbered,
+button.star, a.button.star,
+button.star-bright, a.button.star-bright,
+button.receipt, a.button.receipt,
+button.article, a.button.article,
+button.file-upload, a.button.file-upload,
+button.arrow-left, a.button.arrow-left,
+button.double-arrow-right, a.button.double-arrow-right,
+button.double-arrow-left, a.button.double-arrow-left,
+button.pending-actions, a.button.pending-actions,
+button.delete-red, a.button.delete-red,
+button.move-to-inbox, a.button.move-to-inbox,
+button.draw, a.button.draw,
+button.theme, a.button.theme,
+button.assesment, a.button.assesment,
+button.comment, a.button.comment,
+button.bookmark, a.button.bookmark,
+button.calendar, a.button.calendar,
+button.add-home-screen, a.button.add-home-screen,
+button.business, a.button.business,
+button.car, a.button.car,
+button.workspace, a.button.workspace,
+button.backup-table, a.button.backup-table,
+button.percent, a.button.percent,
+button.chat, a.button.chat,
+button.mail, a.button.mail,
+button.warning, a.button.warning,
+button.installments, a.button.installments,
+button.add-a-photo, a.button.add-a-photo,
+button.photo-library, a.button.photo-library,
+button.play, a.button.play,
+button.sell, a.button.sell,
+button.target, a.button.target, /* não encontrei o resto da definição */
+button.wa, a.button.wa,
+button.home, a.button.home {
+    border-radius: 50%;
+    padding: 0;
+    border: 1px solid transparent;
+}
+
+button.menu, a.button.menu {
+    background-image: url("../img/menu.svg");
+}
+
+button.mais, a.button.mais {
+    background-image: url("../img/more-vert.svg");
+}
+
+button.voltar, a.button.voltar {
+    background-image: url("../img/back.svg");
+}
+
+button.docar, a.button.docar {
+    background-image: url("../img/room.svg");
+}
+
+button.person-pin, a.button.person-pin {
+    background-image: url("../img/person-pin.svg");
+}
+
+button.search, a.button.search {
+    background-image: url("../img/search.svg");
+}
+
+button.checkbox, a.button.checkbox {
+    background-image: url("../img/checkbox.svg");
+}
+
+button.checkbox.checked, a.button.checkbox.checked {
+    background-image: url("../img/checkbox-checked.svg");
+}
+
+button.edit, a.button.edit {
+    background-image: url("../img/edit.svg");
+}
+
+button.analise, a.button.analise {
+    background-image: url("../img/analise.svg");
+}
+
+button.delete, a.button.delete {
+    background-image: url("../img/delete.svg");
+}
+
+button.input, a.button.input {
+    background-image: url("../img/input.svg");
+}
+
+button.config, a.button.config {
+    background-image: url("../img/config.svg");
+}
+
+button.novo, a.button.novo {
+    background-image: url("../img/add-white.svg");
+}
+
+.dark button.novo, .dark a.button.novo {
+    background-image: url("../img/add-azul-claro.svg");
+}
+
+button.next, a.button.next {
+    background-image: url("../img/next.svg");
+}
+
+button.person, a.button.person {
+    background-image: url("../img/person.svg");
+}
+
+button.check, a.button.check {
+    background-image: url("../img/check.svg");
+}
+
+button.check.checked, a.button.check.checked {
+    background-image: url("../img/check-checked.svg");
+}
+
+button.check.checked, a.button.check.checked {
+    background-image: url("../img/check-checked.svg");
+}
+
+button.filter, a.button.filter {
+    background-image: url("../img/filter.svg");
+}
+
+button.filter.filtered, a.button.filter.filtered {
+    background-image: url("../img/filter-blue.svg");
+}
+
+button.tune, a.button.tune {
+    background-image: url("../img/tune.svg");
+}
+
+button.tune.tuned, a.button.tune.tuned {
+    background-image: url("../img/tune-blue.svg");
+}
+
+button.share, a.button.share {
+    background-image: url("../img/share.svg");
+}
+
+button.swap, a.button.swap {
+    background-image: url("../img/swap.svg");
+}
+
+button.send, a.button.send {
+    background-image: url("../img/send.svg");
+}
+
+button.assignment, a.button.assignment {
+    background-image: url("../img/assignment.svg");
+}
+
+button.thumb-up, a.button.thumb-up {
+    background-image: url("../img/thumb-up.svg");
+}
+
+button.thumb-up.filled, a.button.thumb-up.filled {
+    background-image: url("../img/thumb-up-filled.svg");
+}
+
+button.thumb-down, a.button.thumb-down {
+    background-image: url("../img/thumb-down.svg");
+}
+
+button.thumb-down.filled, a.button.thumb-down.filled {
+    background-image: url("../img/thumb-down-filled.svg");
+}
+
+button.thumbs-up-down, a.button.thumbs-up-down {
+    background-image: url("../img/thumbs-up-down.svg");
+}
+
+button.add, a.button.add {
+    background-image: url("../img/add.svg");
+}
+
+button.add.grey, a.button.add.grey {
+    background-image: url("../img/add-grey.svg");
+}
+
+button.skip-previous, a.button.skip-previous {
+    background-image: url("../img/skip-previous.svg");
+}
+
+button.skip-next, a.button.skip-next {
+    background-image: url("../img/skip-next.svg");
+}
+
+button.toggle, a.button.toggle {
+    background-image: url("../img/off.svg");
+    transition: all ease-in-out 0.15s;
+}
+
+button.toggle.on, a.button.toggle.on {
+    background-image: url("../img/on.svg");
+}
+
+button.navigate-before, a.button.navigate-before {
+    background-image: url("../img/navigate-before.svg");
+}
+
+button.navigate-next, a.button.navigate-next {
+    background-image: url("../img/navigate-next.svg");
+}
+
+button.print, a.button.print {
+    background-image: url("../img/print.svg");
+}
+
+button.excel, a.button.excel {
+    background-image: url("../img/excel.svg");
+    background-size: 1.5rem;
+}
+
+button.clear, a.button.clear {
+    background-image: url("../img/clear.svg");
+}
+
+button.open-in-new, a.button.open-in-new {
+    background-image: url("../img/open-in-new.svg");
+}
+
+button.download, a.button.download {
+    background-image: url("../img/download.svg");
+}
+
+button.upload, a.button.upload {
+    background-image: url("../img/upload.svg");
+}
+
+button.view, a.button.view {
+    background-image: url("../img/view.svg");
+}
+
+button.view.off, a.button.view.off {
+    background-image: url("../img/view-off.svg");
+}
+
+button.plus, a.button.plus {
+    background-image: url("../img/plus.svg");
+}
+
+button.minus, a.button.minus {
+    background-image: url("../img/minus.svg");
+}
+
+button.renew, a.button.renew {
+    background-image: url("../img/renew.svg");
+}
+
+button.close, a.button.close {
+    background-image: url("../img/close.svg");
+}
+
+button.paste, a.button.paste {
+    background-image: url("../img/paste.svg");
+}
+
+button.pass, a.button.pass {
+    background-image: url("../img/pass.svg");
+}
+
+button.copy, a.button.copy {
+    background-image: url("../img/copy.svg");
+}
+
+button.copy.copied, a.button.copy.copied {
+    background-image: url("../img/copy-copied.svg");
+}
+
+button.bug, a.button.bug {
+    background-image: url("../img/bug.svg");
+}
+
+button.save, a.button.save {
+    background-image: url("../img/save.svg");
+}
+
+button.archive, a.button.archive {
+    background-image: url("../img/archive.svg");
+}
+
+button.group, a.button.group {
+    background-image: url("../img/group.svg");
+}
+
+button.help, a.button.help {
+    background-image: url("../img/help.svg");
+}
+
+button.lock, a.button.lock {
+    background-image: url("../img/lock.svg");
+}
+
+button.lock.open, a.button.lock.open {
+    background-image: url("../img/lock-open.svg");
+}
+
+button.info, a.button.info {
+    background-image: url("../img/info.svg");
+}
+
+button.money, a.button.money {
+    background-image: url("../img/money.svg");
+}
+
+button.clean, a.button.clean {
+    background-image: url("../img/clean.svg");
+}
+
+button.history, a.button.history {
+    background-image: url("../img/history.svg");
+}
+
+button.history, a.button.history {
+    background-image: url("../img/history.svg");
+}
+
+button.history.active, a.button.history.active {
+    background-image: url("../img/history-active.svg");
+    border: 1px solid #0b57d0;
+}
+
+button.new, a.button.new {
+    background-image: url("../img/new.svg");
+}
+
+button.ticket, a.button.ticket {
+    background-image: url("../img/ticket.svg");
+}
+
+button.wallet, a.button.wallet {
+    background-image: url("../img/wallet.svg");
+}
+
+button.file-download, a.button.file-download {
+    background-image: url("../img/file-download.svg");
+}
+
+button.toggle, a.button.toggle {
+    background-image: url("../img/toggle.svg");
+}
+
+button.toggle.on, a.button.toggle.on {
+    background-image: url("../img/toggle-on.svg");
+}
+
+button.description, a.button.description {
+    background-image: url("../img/description.svg");
+}
+
+button.update, a.button.update {
+    background-image: url("../img/update.svg");
+}
+
+button.arrow-up, a.button.arrow-up {
+    background-image: url("../img/arrow-up.svg");
+}
+
+button.arrow-down, a.button.arrow-down {
+    background-image: url("../img/arrow-down.svg");
+}
+
+button.arrow-right, a.button.arrow-right {
+    background-image: url("../img/arrow-right.svg");
+}
+
+button.cable, a.button.cable {
+    background-image: url("../img/cable.svg");
+}
+
+button.person-light, a.button.person-light {
+    background-image: url("../img/person-light.svg");
+}
+
+button.bold, a.button.bold {
+    background-image: url("../img/format-bold.svg");
+}
+
+button.link, a.button.link {
+    background-image: url("../img/link.svg");
+}
+
+button.format-clear, a.button.format-clear {
+    background-image: url("../img/format-clear.svg");
+}
+
+button.table-view, a.button.table-view {
+    background-image: url("../img/table-view.svg");
+}
+
+button.view-day, a.button.view-day {
+    background-image: url("../img/view-day.svg");
+}
+
+button.public, a.button.public {
+    background-image: url("../img/public.svg");
+}
+
+button.notifications, a.button.notifications {
+    background-image: url("../img/notifications.svg");
+}
+
+button.notifications.on, a.button.notifications.on {
+    background-image: url("../img/notifications-on.svg");
+}
+
+button.expand, a.button.expand {
+    background-image: url("../img/expand.svg");
+}
+
+button.compress, a.button.compress {
+    background-image: url("../img/compress.svg");
+}
+
+button.attachment, a.button.attachment {
+    background-image: url("../img/attachment.svg");
+}
+
+button.attach, a.button.attach {
+    background-image: url("../img/attach.svg");
+}
+
+button.rename, a.button.rename {
+    background-image: url("../img/rename.svg");
+}
+
+button.calc, a.button.calc {
+    background-image: url("../img/calc.svg");
+}
+
+button.train, a.button.train {
+    background-image: url("../img/train.svg");
+}
+
+button.pending, a.button.pending {
+    background-image: url("../img/pending.svg");
+}
+
+button.more, a.button.more {
+    background-image: url("../img/more-hori.svg");
+}
+
+button.asc, a.button.asc {
+    background-image: url("../img/asc.svg");
+    background-size: 50%;
+}
+
+button.desc, a.button.desc {
+    background-image: url("../img/desc.svg");
+    background-size: 50%;
+}
+
+button.whatsapp, a.button.whatsapp {
+    background-image: url("../img/whatsapp.svg");
+}
+
+button.calendar-edit, a.button.calendar-edit {
+    background-image: url("../img/calendar-edit.svg");
+}
+
+button.italic, a.button.italic {
+    background-image: url("../img/format-italic.svg");
+}
+
+button.strikethrough, a.button.strikethrough {
+    background-image: url("../img/format-strikethrough.svg");
+}
+
+button.format-align-left, a.button.format-align-left {
+    background-image: url("../img/format-align-left.svg");
+}
+
+button.format-align-center, a.button.format-align-center {
+    background-image: url("../img/format-align-center.svg");
+}
+
+button.format-align-right, a.button.format-align-right {
+    background-image: url("../img/format-align-rigth.svg");
+}
+
+button.looks-one, a.button.looks-one {
+    background-image: url("../img/looks-one.svg");
+}
+
+button.looks-two, a.button.looks-two {
+    background-image: url("../img/looks-two.svg");
+}
+
+button.looks-3, a.button.looks-3 {
+    background-image: url("../img/looks-3.svg");
+}
+
+button.looks-4, a.button.looks-4 {
+    background-image: url("../img/looks-4.svg");
+}
+
+button.looks-5, a.button.looks-5 {
+    background-image: url("../img/looks-5.svg");
+}
+
+button.looks-6, a.button.looks-6 {
+    background-image: url("../img/looks-6.svg");
+}
+
+button.indent, a.button.indent {
+    background-image: url("../img/format-indent-increase.svg");
+}
+
+button.outdent, a.button.outdent {
+    background-image: url("../img/format-indent-decrease.svg");
+}
+
+button.quote, a.button.quote {
+    background-image: url("../img/format-quote.svg");
+}
+
+button.code, a.button.code {
+    background-image: url("../img/code.svg");
+}
+
+button.folder, a.button.folder {
+    background-image: url("../img/folder.svg");
+}
+
+button.list-bulleted, a.button.list-bulleted {
+    background-image: url("../img/list-bulleted.svg");
+}
+
+button.list-numbered, a.button.list-numbered {
+    background-image: url("../img/list-numbered.svg");
+}
+
+button.star, a.button.star {
+    background-image: url("../img/star.svg");
+    background-size: 2rem;
+}
+
+button.star.star-bright, a.button.star.star-bright {
+    background-image: url("../img/star-bright.svg");
+}
+
+button.receipt, a.button.receipt {
+    background-image: url("../img/receipt.svg");
+}
+
+button.article, a.button.article {
+    background-image: url("../img/article.svg");
+}
+
+button.file-upload, a.button.file-upload {
+    background-image: url("../img/file-upload.svg");
+}
+
+button.arrow-left, a.button.arrow-left {
+    background-image: url("../img/arrow-left.svg");
+}
+
+button.double-arrow-right, a.button.double-arrow-right {
+    background-image: url("../img/double-arrow-rigth.svg");
+}
+
+button.double-arrow-left, a.button.double-arrow-left {
+    background-image: url("../img/double-arrow-left.svg");
+}
+
+button.pending-actions, a.button.pending-actions {
+    background-image: url("../img/pending-actions.svg");
+}
+
+button.delete-red, a.button.delete-red {
+    background-image: url("../img/delete-red.svg");
+}
+
+button.move-to-inbox, a.button.move-to-inbox {
+    background-image: url("../img/move-to-inbox.svg");
+}
+
+button.draw, a.button.draw {
+    background-image: url("../img/draw.svg");
+}
+
+button.theme, a.button.theme {
+    background-image: url("../img/dark-mode.svg");
+    background-position: 12px 12px;
+}
+
+.dark button.theme, a.button.theme {
+    background-image: url("../img/light-mode.svg");
+    background-position: 11px 11px;
+}
+
+.dark button.assesment, a.button.assesment {
+    background-image: url("../img/assessment.svg");
+    background-position: 11px 11px;
+}
+
+.dark button.comment, a.button.comment {
+    background-image: url("../img/comment.svg");
+    background-position: 11px 11px;
+}
+
+.dark button.business, a.button.business {
+    background-image: url("../img/business.svg");
+    background-position: 11px 11px;
+}
+
+button.theme:focus, a.button.theme:focus {
+    box-shadow: none;
+}
+
+button.bookmark, a.button.bookmark {
+    background-image: url("../img/bookmark.svg");
+}
+
+button.bookmark.marked, a.button.bookmark.marked {
+    background-image: url("../img/bookmark-marked.svg");
+}
+
+button.calendar, a.button.calendar {
+    background-image: url("../img/calendar.svg");
+}
+
+button.add-home-screen, a.button.add-home-screen {
+    background-image: url("../img/add-home-screen.svg");
+}
+
+button.car, a.button.car {
+    background-image: url("../img/car.svg");
+}
+
+button.workspace, a.button.workspace {
+    background-image: url("../img/workspace.svg");
+}
+
+button.backup-table, a.button.backup-table {
+    background-image: url("../img/backup-table.svg");
+}
+
+button.percent, a.button.percent {
+    background-image: url("../img/percent.svg");
+}
+
+button.chat, a.button.chat {
+    background-image: url("../img/chat.svg");
+}
+
+button.chat.unread, a.button.chat.unread {
+    background-image: url("../img/chat-unread.svg");
+}
+
+button.mail, a.button.mail {
+    background-image: url("../img/mail.svg");
+}
+
+button.warning, a.button.warning {
+    background-image: url("../img/warning.svg");
+}
+
+button.installments, a.button.installments {
+    background-image: url("../img/installment.png");
+    background-size: 50%;
+}
+
+.dark :is(button.installments, a.button.installments) {
+    background-image: url("../img/installment-white.png");
+}
+
+button.add-a-photo, a.button.add-a-photo {
+    background-image: url("../img/add_a_photo.svg");
+}
+
+button.photo-library, a.button.photo-library {
+    background-image: url("../img/photo-library.svg");
+}
+
+button.play, a.button.play {
+    background-image: url("../img/play.svg");
+}
+
+button.sell, a.button.sell {
+    background-image: url("../img/sell.svg");
+}
+
+button.wa, a.button.wa {
+    background-image: url("../img/home/whatsapp.png");
+    background-size: 62.5%;
+}
+
+button.home, a.button.home {
+    background-image: url("../img/home.svg");
+    background-size: 62.5%;
+}
+
+.buttons {
+    position: relative;
+}
+
+.buttons > div {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    border-radius: 0.25rem;
+    background: white;
+    box-shadow: 0 0 4px 2px #a8a8a8;
+    display: none;
+    flex-flow: column nowrap;
+    padding: 0.25rem 0;
+}
+
+.dark .buttons > div {
+    background: var(--fg);
+    box-shadow: 0 0 1rem black;
+}
+
+.buttons > div.aberto {
+    display: flex;
+}
+
+.buttons > div button, .buttons > div a.button {
+    height: var(--lado-botao);
+    width: auto;
+    min-width: var(--lado-botao);
+    text-align: left;
+    border-radius: 0;
+    padding: 0 1rem 0 0.85rem;
+    justify-content: flex-start;
+}
+
+.dark .buttons > div button, .dark .buttons > div a.button {
+    color: white;
+}
+
+.buttons > div button:focus, .buttons > div a.button:focus {
+    box-shadow: none;
+    border: 1px solid transparent;
+}
+
+.botoes {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.botoes button, .botoes a.button, .butbot {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 0 1rem;
+    background: #d4d4d4;
+    font-weight: bold;
+    margin: 0 0 2px 0;
+}
+
+.botoes button, .botoes a.button {
+    height: auto;
+    padding: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .botoes button, .botoes a.button {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+.botoes button:hover, .botoes a.button:hover, .butbot:hover {
+    background: #c8c8c8;
+}
+
+.botoes button:active, .botoes a.button:active, .butbot:active {
+
+}
+
+.dark .botoes button, .dark .botoes a.button, .dark .butbot {
+    background: transparent;
+    color: #a8c7fa;
+}
+
+.dark .botoes button:hover, .dark .botoes a.button:hover, .dark .butbot:hover {
+    background: #32373d;
+}
+
+.dark .botoes button:active, .dark .botoes a.button:active, .dark .butbot:active {
+    background: #3e454f;
+}
+
+.botoes button.primario, .botoes a.button.primario, .butbot.primario {
+    background: #0b57d0;
+    color: white;
+}
+
+.botoes button.primario:hover, .botoes a.button.primario:hover, .butbot.primario:hover {
+    background: #1b61d1;
+}
+
+.botoes button.primario:active, .botoes a.button.primario:active, .butbot.primario:active {
+    background: #1458b3;
+}
+
+.dark .botoes button.primario, .dark .botoes a.button.primario, .dark .butbot.primario {
+    color: #193c75;
+    background: #a8c7fa;
+}
+
+.botoes button.outline, .botoes a.button.outline, .butbot.outline {
+    background: transparent;
+    border: 1px solid #0b57d0;
+    color: #0b57d0;
+}
+
+.dark :is(.botoes button.outline, .botoes a.button.outline, .butbot.outline) {
+    border: 1px solid steelblue;
+    color: steelblue;
+}
+
+.botoes button.outline:hover, .botoes a.button.outline:hover, .butbot.outline:hover {
+    border: 1px solid blue;
+    color: blue;
+    background: #f0f0f0;
+}
+
+.dark :is(.botoes button.outline:hover, .botoes a.button.outline:hover, .butbot.outline:hover) {
+    background: #0f0f0f;
+}
+
+.botoes button.outline:active, .botoes a.button.outline:active, .butbot.outline:active {
+    transform: translateY(1px);
+}
+
+.botoes button.perigo, .botoes a.button.perigo, .butbot.perigo {
+    background: #dc3545;
+    color: white;
+}
+
+.botoes button.perigo:hover, .botoes a.button.perigo:hover, .butbot.perigo:hover {
+    background: #c82333;
+}
+
+.botoes button.perigo:active, .botoes a.button.perigo:active, .butbot.perigo:active {
+    background: #b12333;
+}
+
+.botoes button.danger, .botoes a.button.danger, .butbot.danger {
+    background: transparent;
+    color: #e94235;
+    border: 1px solid #e94235;
+}
+
+.botoes button.danger:hover, .botoes a.button.danger:hover, .butbot.danger:hover {
+    background: #eeeeee;
+}
+
+.dark .botoes button.danger:hover, .dark .botoes a.button.danger:hover, .dark .butbot.danger:hover {
+    background: #23161a;
+}
+
+.botoes button.danger:active, .botoes a.button.danger:active, .butbot.danger:active {
+    transform: translateY(1px);
+}
+
+.botoes button.link, .botoes a.button.link, .butbot.link {
+    background: transparent;
+    color: #202124;
+    border-radius: 3px;
+}
+
+.dark .botoes button.link, .dark .botoes a.button.link, .dark .butbot.link {
+    background: transparent;
+}
+
+.botoes button.link:hover, .botoes a.button.link:hover, .butbot.link:hover {
+    border: 1px solid #f2f2f2;
+}
+
+.botoes button.link:active, .botoes a.button.link:active, .butbot.link:active {
+    border: 1px solid #d8d8d8;
+}
+
+.dark .botoes button.link, .dark .botoes a.button.link, .dark .butbot.link {
+    color: #aaaaaa;
+}
+
+.dark .botoes button.link:hover, .dark .botoes a.button.link:hover, .dark .butbot.link:hover {
+    color: #c5c5c5;
+    border: 1px solid transparent;
+}
+
+.dark .botoes button.link:active, .dark .botoes a.button.link:active, .dark .butbot.link:active {
+    color: white;
+    border: 1px solid #aaaaaa;
+}
+
+button.novo, a.button.novo,
+button.next, a.button.next {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-size: 2rem;
+    background-color: #0b57d0;
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.6);
+}
+
+.dark button.novo, .dark a.button.novo,
+.dark button.next, .dark a.button.next {
+    background-color: var(--bg);
+    box-shadow: 0 0 1rem black;
+}
+
+button.next, a.button.next {
+    background-color: #0b57d0;
+}
+
+button.novo:hover, a.button.novo:hover, button.next:hover, a.button.next:hover {
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.9);
+}
+
+.dark button.novo:hover, .dark a.button.novo:hover, .dark button.next:hover, .dark a.button.next:hover {
+    background-color: #162d40;
+    box-shadow: 0 0 1rem black;
+}
+
+button.novo:active, a.button.novo:active, button.next:active, a.button.next:active {
+    background-color: #073b8e;
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.9);
+}
+
+.dark button.novo:active, .dark a.button.novo:active, .dark button.next:active, .dark a.button.next:active {
+    background-color: #203244;
+    box-shadow: 0 0 1rem black;
+}
+
+
+button.next:active, a.button.next:active {
+    background-color: #1a5cb9;
+}
+
+#regiao-botoes {
+    height: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+    button.novo, a.button.novo,
+    button.next, a.button.next {
+        right: auto;
+        left: 50%;
+        margin-left: calc(-3.5rem / 2);
+        bottom: 1.5rem;
+    }
+
+    #regiao-botoes {
+        height: 4rem;
+    }
+
+
+    body.scroll.modal-aberto button.novo, body.scroll.modal-aberto a.button.novo,
+    body.scroll.modal-aberto button.next, body.scroll.modal-aberto a.button.next {
+        left: calc(50% - 8px);
+    }
+
+}
+
+.botoes :is(button.new-feature, a.button.new-feature) {
+    background-image: url("../img/new.svg");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+}
+
+.butbot, a.button.butbot {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    width: auto;
+}
+
+.butbot.go, a.button.butbot.go {
+    width: auto;
+    padding: 0 2.75rem 0 1rem;
+    background: url("../img/next.svg") no-repeat right 0.75rem center #1a73e8;
+    border-radius: calc(3.5rem / 2);
+    color: white;
+}
+
+.butbot.go:hover, a.button.butbot.go:hover {
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    background: url("../img/next.svg") no-repeat right 0.75rem center #1a73e8;
+}
+
+.butbot.go:active, a.button.butbot.go:active {
+    box-shadow: none;
+}
+
+.dark .butbot.go, .dark a.button.butbot.go {
+    background-color: var(--bg);
+    box-shadow: 0 0 1rem black;
+}
+
+.dark .butbot.go:hover, .dark a.button.butbot.go:hover {
+    background-color: #162d40;
+    box-shadow: 0 0 1rem black;
+}
+
+.dark .butbot.go:active, .dark a.button.butbot.go:active {
+    background-color: #203244;
+    box-shadow: 0 0 1rem black;
+}
+
+blockquote.quote {
+    border-left: 3px solid black;
+    padding-left: 1rem;
+    font-style: italic;
+    margin: 1rem 0;
+    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.stars {
+    display: flex;
+}

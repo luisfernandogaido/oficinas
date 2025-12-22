@@ -1,0 +1,83 @@
+.grafico-barras {
+    border: 1px solid lightgray;
+    display: flex;
+}
+
+.grafico-barras .y {
+    flex: 0 1 auto;
+    text-align: right;
+    display: flex;
+    flex-flow: column nowrap;
+    border-right: 1px solid lightgray;
+}
+
+.grafico-barras .y .y1 {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    border-bottom: 1px solid lightgray;
+}
+
+.grafico-barras .y1 > div {
+    flex: 1 0 auto;
+    overflow: hidden;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 0.2rem;
+}
+
+.grafico-barras .y .y2 {
+    flex: 0 0 auto;
+}
+
+.grafico-barras .g {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.grafico-barras .g svg {
+    flex: 1 1 auto;
+    height: 0;
+}
+
+.grafico-barras svg {
+    display: block;
+    background: #e8e8e8;
+}
+
+.grafico-barras svg .barra {
+    fill: steelblue;
+}
+
+.grafico-barras svg .grade {
+    stroke-width: 2;
+    stroke: lightgray;
+}
+
+.grafico-barras .x {
+    display: flex;
+}
+
+.grafico-barras .x > div {
+    flex: 0 0 auto;
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0.25rem;
+    overflow: hidden;
+}
+
+.grafico-barras-hint {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    font-size: 0.9rem;
+    pointer-events: none;
+    border-radius: 4px;
+}

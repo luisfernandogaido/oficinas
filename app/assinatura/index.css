@@ -1,0 +1,23 @@
+#ctn > div {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#ctn > div p{
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+}
+
+table {
+    margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+    #ctn {
+        width: 500px;
+        margin: auto;
+    }
+}

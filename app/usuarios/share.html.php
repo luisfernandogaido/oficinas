@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 1.1rem;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+    </style>
+</head>
+<body>
+<p>
+    Olá, <?= $nome ?>!
+</p>
+<p>
+    Acesse o aplicativo clicando no link abaixo.
+</p>
+
+<p>
+    <a href="<?= SITE ?>app/usuarios/token-use.php?token=<?= $token ?>">Clique aqui</a>
+</p>
+
+<p>
+    Não se esqueça de alterar sua senha.
+</p>
+</body>
+</html>

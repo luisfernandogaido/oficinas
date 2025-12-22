@@ -1,0 +1,261 @@
+table {
+    margin: 1rem auto;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+.dark tr {
+    border-color: #38444d;
+}
+
+th, td {
+    padding: 0 0.5rem;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+th {
+    line-height: 2rem;
+}
+
+.dark tr.sel {
+    border-bottom: 1px solid transparent;
+}
+
+th {
+    text-align: left;
+}
+
+td .tag {
+    display: inline-block;
+    padding: 0.4rem;
+    background: #cce0ff;
+    color: #080093;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    margin: 1px;
+}
+
+.paginacao {
+    display: flex;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.25rem;
+    border: 1px solid #444444;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.dark .paginacao {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+div:has(.paginacao) {
+    margin-bottom: 3rem
+}
+
+@media screen {
+    table.cards, table.cards thead, table.cards tbody, table.cards tr, table.cards th, table.cards td {
+        display: block;
+    }
+
+    table.cards thead {
+        display: none;
+    }
+
+    table.cards th, table.cards td {
+        padding: 0;
+    }
+
+    table.cards tr {
+        padding: 1rem;
+        border: none;
+        border-bottom: 1px solid #e0e0e0;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    table.cards tr:last-child {
+        border-bottom: none;
+    }
+
+    .dark table.cards tr {
+        border-color: #38444d;
+    }
+
+    table.cards td {
+        flex: 1 1 100%;
+    }
+
+    table.cards td:last-child {
+        margin-bottom: 0;
+    }
+
+    table.cards td:before {
+        display: block;
+        content: attr(data-th);
+        color: darkgray;
+        font-weight: bold;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
+
+    td.num {
+        text-align: right;
+    }
+
+    table.cards td.num {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    table.cards.mob {
+        display: table;
+    }
+
+    table.cards.mob thead {
+        display: table-header-group;
+    }
+
+    table.cards.mob tbody {
+        display: table-row-group;
+    }
+
+    table.cards.mob tr {
+        display: table-row;
+        padding: 0;
+        margin-bottom: 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    table.cards.mob tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .dark table.cards.mob tr {
+        border-color: #38444d;
+    }
+
+    .dark table.cards.mob tr.sel,
+    .dark table.cards.mob tr.sel th,
+    .dark table.cards.mob tr.sel td,
+    table.cards.mob .dark tr.sel:hover td {
+        background: #174ea6;
+    }
+
+
+    table.cards.mob th, table.cards.mob td {
+        display: table-cell;
+        padding: 0 0.5rem;
+    }
+
+    table.cards.mob th {
+        line-height: 2rem;
+    }
+
+    table.cards.mob td {
+        margin-bottom: 0;
+    }
+
+    table.cards.mob td:before {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    table.cards td.num {
+        text-align: right;
+    }
+
+    table.cards.tab {
+        display: table;
+    }
+
+    table.cards.tab thead {
+        display: table-header-group;
+    }
+
+    table.cards.tab tbody {
+        display: table-row-group;
+    }
+
+    table.cards.tab tr {
+        display: table-row;
+        padding: 0;
+        margin-bottom: 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    table.cards.tab tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .dark table.cards.tab tr {
+        border-color: #38444d;
+    }
+
+    table.cards.tab tr:hover td, table.cards.tab tr:hover {
+        background: #fafafa;
+    }
+
+    .dark table.cards.tab tr:hover td {
+        background: #1a3244;
+    }
+
+    table.cards.tab tr.sel:hover td {
+        background: #e8f0fe;
+    }
+
+    .dark table.cards.tab tr.sel:hover td {
+        background: #174ea6;
+    }
+
+    table.cards.tab th, table.cards.tab td {
+        display: table-cell;
+        padding: 0 0.5rem;
+    }
+
+    table.cards.tab th {
+        line-height: 2rem;
+    }
+
+    table.cards.tab td {
+        margin-bottom: 0;
+    }
+
+    table.cards.tab td:before {
+        display: none;
+    }
+}
+
+@media screen {
+    table th.check,
+    table td.check,
+    table.cards.mob th.check,
+    table.cards.mob td.check,
+    table.cards.tab th.check,
+    table.cards.tab td.check,
+    table td.acoes,
+    table th.acoes,
+    table.cards.mob th.acoes,
+    table.cards.mob td.acoes,
+    table.cards.tab th.acoes,
+    table.cards.tab td.acoes {
+        justify-content: flex-end;
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+}
+

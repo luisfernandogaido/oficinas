@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import "menu.css";
+@import "botoes.css";
+@import "forms-old.css";
+@import "forms.css";
+@import "alerta.css";
+@import "modal.css";
+@import "tabelas.css";
+@import "tabs.css";
+@import "suggest.css";
+@import "tooltip.css";
+@import "editor.css";
+@import "popover.css";
+@import "cards.css";
+@import "search-panel.css";
+
+:root {
+    --shadow: 0 0 3px #aaaaaa;
+    --google-shadow: 0 4px 8px 3px rgba(0, 0, 0, .15), 0 1px 3px rgba(0, 0, 0, .3);
+    --dark-shadow: 0 0 4px #080808;
+    --altura-header: 3.5rem;
+    --largura-scroll: 8px;
+    --bg: #eeedf3;
+    --bgh: #e1e2e4;
+    --bga: #d1d2d4;
+    --fg: #f9f8fe;
+    --fgh: #f7f8f9;
+    --fga: #a9b0bc;
+}
+
+.dark {
+    --bg: #1e1f24;
+    --bgh: #32373d;
+    --bga: #414a48;
+    --fg: #121318;
+    --fgh: #353739;
+    --fga: #596673;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Nunito', Arial, 'sans-serif';
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
+.dark * {
+    color: #b6c2cf;
+}
+
+::-webkit-scrollbar {
+    width: var(--largura-scroll);
+    height: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #919191;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    --fundo: white;
+    --cor-borda: #dadada;
+    --fundo-input: #f5f5f5;
+    background: var(--bg);
+}
+
+body.dark {
+    --fundo: #15202b;
+    --cor-borda: #38444d;
+    --fundo-input: #192734;
+}
+
+h1, h2, h3 {
+    color: #5f6368;
+}
+
+a {
+    text-decoration: none;
+    color: steelblue;
+    cursor: default;
+}
+
+a:hover {
+    color: steelblue;
+}
+
+a[href] {
+    cursor: pointer;
+}
+
+.dark a {
+    color: #c0c0c0;
+    cursor: default;
+}
+
+.dark a:hover {
+    color: white;
+}
+
+.dark a[href] {
+    cursor: pointer;
+}
+
+main {
+    padding: var(--altura-header) 1rem 1rem 1rem;
+    min-height: 100%;
+    width: 100vw;
+}
+
+.oculto, .oculta, .hidden {
+    display: none !important;
+}
+
+.hidden.show, .oculto.show, .oculta.show {
+    display: revert !important;
+}
+
+@keyframes rotacao-loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+#loading, .loading {
+    background: url(../img/loading-dark.svg) no-repeat center #303134;
+    width: 2.5rem;
+    height: 2.5rem;
+    animation: rotacao-loading 1s infinite;
+    display: none;
+    position: fixed;
+    top: 1.5rem;
+    z-index: 11;
+    left: 50%;
+    margin-left: calc(-2.5rem / 2);
+    border-radius: 50%;
+}
+
+#loading.visivel {
+    /*bug depois que o chrome atualizei e mantem estados de cliques ao voltar no histórico*/
+    display: block;
+    /*display: none;*/
+
+}
+
+.iphone #loading.visivel {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+
+    #loading {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    #loading.visivel {
+        display: none;
+    }
+}
+
+.carregando {
+    height: 3rem;
+    width: 3rem;
+    margin: auto;
+    background: url(../img/loading-dark.svg) center no-repeat;
+    animation: rotacao-loading 1s infinite;
+}
+
+.shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.dark .shadow {
+    box-shadow: 0 2px 4px black;
+}
+
+.tela {
+    position: absolute;
+    top: var(--altura-header);
+    left: 0;
+    right: 0;
+    min-height: calc(100vh - var(--altura-header));
+    background: var(--bg);
+    padding: 0 1rem 1rem 1rem;
+    display: none;
+}
+
+.tela.moda {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100vw;
+    z-index: 6;
+    padding: 1rem;
+}
+
+.tela.show {
+    display: block;
+}
+
+.tela.moda > div {
+    background: var(--bg);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    max-height: calc(100% - 1rem);
+    overflow: auto;
+    position: relative;
+}
+
+.tela.moda > div > button.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.dark .tela.moda > div {
+    box-shadow: 0 2px 4px black;
+}
+
+.tela.moda.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.dark .tela.moda.show {
+    background: rgba(0, 0, 0, 0.625);
+}
+
+.tela.com-novo {
+    padding-bottom: 6rem;
+}
+
+body.moda {
+    overflow: hidden;
+}
+
+.checks {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.checks label {
+    border: 1px solid #c4c4c4;
+    border-radius: 0.25rem;
+    padding: 0.75rem 0.25rem;
+    text-align: center;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1px 1px;
+    color: black;
+    font-size: 0.8rem;
+}
+
+.dark .checks label {
+    color: #b6c2cf;
+}
+
+@media screen and (min-width: 1024px) {
+    .checks label {
+        /*padding: 0.5rem 0;*/
+    }
+}
+
+.checks input {
+    display: none;
+}
+
+.checks label:hover {
+    /*background: #ebedf0;*/
+    background: var(--bg);
+}
+
+.checks label.sel {
+    background: #d3e3fd;
+    /*border: 1px solid #d3e3fd;*/
+    font-weight: bold;
+}
+
+.dark .checks label {
+    border-color: #5e6060;
+}
+
+.dark .checks label:hover {
+    background: #1f2f3f;
+}
+
+.dark .checks label.sel {
+    background: #595959;
+    color: white;
+}
+
+.banner {
+    padding: 0.5rem;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.banner p {
+    font-size: 0.8rem;
+}
+
+.dark .banner {
+    border-bottom: 1px solid #646464;
+}
+
+@media (min-width: 768px) {
+    .banner p {
+        text-align: center;
+    }
+}
+
+div.warning {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    color: #856404;
+    margin: 0.5rem 0;
+}
+
+div.warning * {
+    color: #856404;
+}
+
+.error {
+    color: #d50000;
+    padding: 0.5rem 0;
+    border-top: 2px solid #d50000;
+}
+
+.error * {
+    color: #d50000;
+}
+
+.dark div.warning {
+    background: #d6d8d9;
+    border: 1px solid #c6c8ca;
+    color: #1b1e21;
+}
+
+.dark div.warning * {
+    color: #1b1e21;
+}
+
+.warning p {
+    margin-bottom: 0.5rem;
+}
+
+ul, ol {
+    padding-left: 1.1rem;
+}
+
+li {
+    list-style-position: inside;
+}
+
+pre, pre * {
+    font-family: monospace;
+    width: 100%;
+    overflow: auto;
+}
+
+.logo {
+    height: var(--altura-header);
+    flex: 0 1 75px;
+    background: url("../img/chess-gaido.svg") no-repeat center left;
+    background-size: contain;
+}
+
+.dark .logo {
+    background-image: url("../img/chess-gaido-light.svg");
+}

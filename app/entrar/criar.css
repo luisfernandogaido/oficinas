@@ -1,0 +1,22 @@
+@import "form.css";
+
+form {
+    padding-bottom: 0;
+}
+
+#p-email {
+    font-weight: bold;
+    color: #172b4d;
+}
+
+#the-logo {
+    height: 60px;
+    background: url("../../core/templates/gaido/img/chess-gaido.svg") no-repeat center;
+    background-size: contain;
+}
+
+.dark #the-logo {
+    height: 60px;
+    background-image: url("../../core/templates/gaido/img/chess-gaido-light.svg");
+    background-size: contain;
+}

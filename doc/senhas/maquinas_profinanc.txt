@@ -1,0 +1,20 @@
+Agentes de implantação na Azure
+
+20.253.245.200
+agente-consorcio
+Vai$er1alforever
+RustDesk numb: 135 005 303
+RustDesk pass: vTNXvr6BXN6Y
+
+13.93.178.0
+agente-consorcio-2
+T10Guerreiro
+RustDesk numb: 439 433 734
+RustDesk pass: vTNXvr6BXN6Y
+
+consorcio (php84, DO conta Profinanc)
+host: 138.197.13.148
+mysql user: root
+mysql pass: J8LZQWJe9PnB
+mysql user: consorcio
+mysql pass: eXfmAnY66aB5

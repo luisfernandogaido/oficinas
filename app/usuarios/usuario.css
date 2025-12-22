@@ -1,0 +1,28 @@
+form {
+    padding: 1rem;
+    max-width: 400px;
+    margin: auto;
+    background: var(--fg);
+    border-radius: 0.5rem;
+}
+
+#b-salvar, #b-cancelar {
+    flex: 1 1 0;
+}
+
+@media (min-width: 768px) {
+
+    form {
+
+    }
+
+}
+
+.botoes {
+    flex: 1 1 auto;
+    margin: 0.5rem 0;
+}
+
+#b-senha {
+    user-select: none;
+}

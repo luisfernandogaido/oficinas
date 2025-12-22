@@ -1,0 +1,24 @@
+Recebimentos + Custos Host & E-mail (Setembro/2020)
+
+Vencimento: 15/10/2020
+
+A) Mensalidade Profinanc: R$1436,77
+B) Mensalidade Consórcio: R$212,60
+
+Custos G Suite Basic
+C) profinanc.com.br: R$128,40 / 2 = R$64,20
+D) fotoprocesso.com.br: R$3,22 / 2 = R$1,61
+
+Custos Digital Ocean
+E) profinanc: 10,00 US$ / 2 = R$29,72
+F) bkp profinanc: 2,00 US$ = R$11,89
+G) lemp: 10,00 US$ = R$59,45
+
+H) Mensalidade Consórcio Novo Acordo: R$700,00
+
+Parte Tiago (A+B+C+D+E): R$1744,90
+Parte Profinanc (F+G+H): R$771,34
+
+Total: R$2516,24
+
+Obs.: Custo fotoprocesso residual pré cancelamento.

@@ -1,0 +1,8 @@
+header > .banner {
+    justify-content: center;
+}
+
+#total {
+    font-weight: bold;
+    text-align: center;
+}

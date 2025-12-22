@@ -1,0 +1,305 @@
+input:not([type=radio]):not([type=checkbox]):not([type=file]), select, textarea {
+    outline: none;
+    display: block;
+    padding: 0.5rem;
+}
+
+input:not([type=radio]):not([type=checkbox]):not([type=file]):not([type=range]), select, textarea {
+    appearance: none;
+}
+
+select {
+    appearance: auto;
+}
+
+input {
+    border: 1px solid #ececec;
+}
+
+.dark input {
+    border: none;
+}
+
+input:not([type=radio]):not([type=checkbox]):not([type=range]), textarea {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.dark input, .dark select, .dark textarea {
+    background: transparent;
+}
+
+input:not([type=checkbox]):not([type=radio]):not([type=range]), textarea {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    text-align: right;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+select, option {
+    background: var(--bg);
+}
+
+input {
+    font-size: 0.9rem;
+}
+
+input:disabled, select:disabled, textarea:disabled {
+    -webkit-text-fill-color: currentColor;
+    opacity: 1;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+input[type=search]:not([type=radio]):not([type=checkbox]):not([type=file]) {
+    padding-left: 1rem;
+    border: 1px solid #dfe1e5;
+}
+
+.dark input[type=search]:not([type=radio]):not([type=checkbox]):not([type=file]) {
+    border: 1px solid #5e6060;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+.campos {
+    margin: 0.5rem 0;
+}
+
+.campos > .campo > .rotulo label, .campos > .campo > .controle label {
+    font-size: 0.9rem;
+}
+
+.campos > .campo.required > .rotulo label::after, .campos > .campo.required > .controle label::after {
+    content: "*";
+    color: #e50914;
+}
+
+.campos > .campo.checks.required > .rotulo label::after, .campos > .campo.required > .controle.checks label::after {
+    content: "";
+}
+
+input[type="text"], input[type="number"], select {
+    font-size: 0.9rem;
+    border: 1px solid #9e9e9e;
+    background: transparent;
+    color: #626262;
+    width: 100%;
+    border-radius: 0.25rem;
+}
+
+input[type="text"]:hover, input[type="number"]:hover, select:hover {
+    border: 1px solid #1f1f1f;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border: 1px solid #0b57d0;
+}
+
+.dark :is(input[type="text"], input[type="number"], select) {
+    color: white;
+}
+
+.dark :is(input[type="text"]:hover, input[type="number"]:hover, select:hover) {
+    border: 1px solid white;
+}
+
+.dark :is(input[type="text"]:focus, input[type="number"]:focus, select:focus) {
+    border: 1px solid #3ea6ff;
+}
+
+.campos > .campo input, .campos > .campo textarea, .campos > .campo select {
+    outline: none;
+    height: 3rem;
+    font-size: 1rem;
+    border: 1px solid #9e9e9e;
+    background: transparent;
+    color: #626262;
+    width: 100%;
+    border-radius: 0.25rem;
+}
+
+.campos > .campo input[type=range] {
+    border: none;
+}
+
+.dark .campos :is(input, textarea, select) {
+    color: white;
+}
+
+.campos > .campo input[type=file], input[type=file] {
+    display: none;
+}
+
+.campos > .campo :is(input[type=time], input[type=date], input[type=datetime-local]) {
+    height: auto;
+    text-align: center;
+    padding: 0.75rem;
+}
+
+.campos > .campo textarea {
+    padding: 12px 0.75rem;
+}
+
+.campos > .campo input[type=search] {
+    background-image: url("../img/search.svg");
+    background-repeat: no-repeat;
+    background-position: top 12px right 10px;
+}
+
+.campos > .campo input[type=checkbox], .campos > .campo input[type=radio] {
+    width: auto;
+}
+
+.campos > .campo input[type=date]::-webkit-inner-spin-button,
+.campos > .campo input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campos.pequenos > .campo input, .campos.pequenos > .campo textarea, .campos.pequenos > .campo select {
+    height: 2.25rem;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+.campos.pequenos option {
+    font-size: 0.9rem;
+}
+
+.campos > .campo input[type=checkbox], .campos > .campo input[type=radio] {
+    height: auto;
+}
+
+.campos > .campo textarea {
+    height: 4rem;
+}
+
+.campos > .campo input:hover, .campos > .campo textarea:hover, .campos > .campo select:hover {
+    border: 1px solid #1f1f1f;
+}
+
+.campos > .campo input[type=range]:hover {
+    border: none;
+}
+
+.dark .campos .campo :is(input:hover, textarea:hover, select:hover) {
+    border: 1px solid white;
+}
+
+.campos > .campo input:focus, .campos > .campo textarea:focus, .campos > .campo select:focus {
+    border: 1px solid #0b57d0;
+}
+
+.campos > .campo :is(input[type=time]:focus, input[type=date]:focus, input[type=datetime-local]:focus) {
+    border-bottom-width: 1px;
+    padding: 0.75rem;
+}
+
+.campos > .campo :is(input[type=time]:focus) {
+    padding: 0.75rem 0.5rem;
+}
+
+.campos > .campo input[type=search]:focus {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.dark .campos > .campo input:focus, .dark .campos > .campo textarea:focus, .dark .campos > .campo select:focus {
+    border: 1px solid #3ea6ff;
+}
+
+.campos > .campo textarea:focus {
+    padding: 12px 0.75rem 3px 0.75rem;
+}
+
+.campos.pequenos > .campo input:focus, .campos.pequenos > .campo textarea:focus, .campos.pequenos > .campo select:focus {
+    padding: 1px 0 0 0;
+}
+
+
+.campos > .campo input[type=number]::-webkit-inner-spin-button,
+.campos > .campo input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campos > .campo input.invalid:not([type=checkbox]):not([type=radio]),
+.campos > .campo select.invalid,
+.campos > .campo textarea.invalid {
+    border: 1px solid #e50914;
+}
+
+.dark .campos > .campo input.invalid:not([type=checkbox]):not([type=radio]),
+.dark .campos > .campo select.invalid,
+.dark .campos > .campo textarea.invalid {
+    border: 1px solid #e50914;
+}
+
+.campos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.campos > .campo {
+    flex: 1 1 calc(100% - 0.5rem);
+}
+
+.campos > .campo.checks {
+    padding: 0.5rem 0;
+}
+
+.campos > .campo .rotulo {
+    margin: 0 0 0 0;
+}
+
+.campos > .campo .controle label {
+    padding: 0.5rem 0;
+}
+
+.controle.checks label {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+}
+
+.controle.checks label.primario {
+    background: #0b57d0;
+    border: 1px solid #0b57d0;
+    color: white;
+}
+
+.controle.checks label.primario:active {
+    background: #1458b3;
+}
+
+.campos > .campo .controle.checks label {
+    padding: 0.85rem;
+    margin: 1px;
+}
+
+.controle.checks input {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .controle.checks {
+        min-height: 3rem;
+    }
+}
+
+input.money {
+    text-align: right;
+}

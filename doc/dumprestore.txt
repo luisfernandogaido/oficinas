@@ -1,0 +1,16 @@
+MongoDB
+
+mongodump --uri="mongodb://gaido:1000sonhosreais@167.99.55.99:27017/cnc?authSource=admin" --gzip
+mongorestore --drop --numInsertionWorkersPerCollection=4 --gzip
+
+Restore com a pasta dump dentro do servidor DO
+mongorestore --drop --numInsertionWorkersPerCollection=4 --gzip --username=gaido --password=1000sonhosreais
+
+Só uma collection
+mongodump --uri="mongodb://localhost:27017/cnc" -c=carteiras --gzip
+
+Só a estrutura de uma collection
+mongodump --uri="mongodb://localhost:27017/cnc" -c=assembleias --queryFile="E:\coding\github.com\luisfernandogaido\cnc\doc\empty_query.json"
+
+Restore no servidor da DO (ideal para cópias)
+mongorestore --uri="mongodb://gaido:1000sonhosreais@167.99.55.99:27017/?authSource=admin" -d=cnc2 --gzip dump/cnc

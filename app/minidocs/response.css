@@ -1,0 +1,10 @@
+header .banner {
+    font-weight: bold;
+    justify-content: center;
+}
+
+.path {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}

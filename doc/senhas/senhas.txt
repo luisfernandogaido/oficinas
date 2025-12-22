@@ -1,0 +1,19 @@
+storage gaido conf.json
+{
+  "meuToken": "4hznjNYh",
+  "uri": "mongodb://gaido:1000sonhosreais@167.99.55.99:27017/?authSource=admin",
+  "dir": "/mnt/storage/static",
+  "staticHost": "https://static.gaido.dev"
+}
+
+storage profinanc conf.json
+{
+  "meuToken": "NDBd84dWpfGg",
+  "uri": "mongodb://profinanc:yCyPvAragfuxWK9b@68.183.24.83:27017/storage?authSource=admin",
+  "dir": "/mnt/volume_nyc1_01/storage",
+  "staticHost": "https://static.profinanc.com.br"
+}
+
+elasticsearch:
+user: elastic
+pass: NZ9*uXCLbCReu16tcEGs

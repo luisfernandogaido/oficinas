@@ -1,0 +1,26 @@
+form {
+    margin: auto;
+    max-width: 600px;
+}
+
+#descricao {
+    min-height: 8rem;
+    max-height: 50vh;
+    field-sizing: content;
+    height: auto;
+}
+
+.campos > .campo > .controle:has(img) {
+    justify-content: center;
+    align-items: center;
+}
+
+form img {
+    display: block;
+    max-width: 100%;
+    max-height: 25vh;
+}
+
+.campos > .campo.d2 {
+    flex: 0 1 calc(100% / 2 - 0.5rem);
+}

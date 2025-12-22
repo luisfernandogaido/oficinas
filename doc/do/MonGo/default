@@ -1,0 +1,593 @@
+server {
+	server_name gmail.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4007;
+  	    access_log /var/log/nginx/gmail-access.log combined;
+  	    error_log /var/log/nginx/gmail-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/gmail.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/gmail.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = gmail.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    listen 80;
+	server_name gmail.gaido.dev;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name qrcode.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4011;
+  	    access_log /var/log/nginx/qrcode-access.log combined;
+  	    error_log /var/log/nginx/qrcode-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/qrcode.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/qrcode.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = qrcode.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name qrcode.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name enduro.profinanc.com.br;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4008;
+  	    access_log /var/log/nginx/calms-access.log combined;
+  	    error_log /var/log/nginx/calms-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/enduro.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/enduro.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = enduro.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name enduro.profinanc.com.br;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+limit_req_zone $http_authorization zone=cnc_limit:10m rate=120r/m;
+
+server {
+	server_name cnc.profinanc.com.br;
+	location / {
+	    # limit_req zone=cnc_limit burst=120 nodelay;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4009;
+  	    access_log /var/log/nginx/cnc-access.log combined;
+  	    error_log /var/log/nginx/cnc-error.log;
+	}
+	client_max_body_size 4M;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/cnc.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/cnc.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = cnc.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name cnc.profinanc.com.br;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name fipe.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4010;
+  	    access_log /var/log/nginx/fipe-access.log combined;
+  	    error_log /var/log/nginx/fipe-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/fipe.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/fipe.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = fipe.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name fipe.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name aut.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4012;
+  	    access_log /var/log/nginx/aut-access.log combined;
+  	    error_log /var/log/nginx/aut-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/aut.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/aut.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = aut.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name aut.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name access.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4013;
+  	    access_log /var/log/nginx/access-access.log combined;
+  	    error_log /var/log/nginx/access-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/access.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/access.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = access.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    listen 80;
+	server_name access.gaido.dev;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name legmon.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4014;
+  	    access_log /var/log/nginx/legmon-access.log combined;
+  	    error_log /var/log/nginx/legmon-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/legmon.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/legmon.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = legmon.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name legmon.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name godonto.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4015;
+
+        proxy_read_timeout 1800;
+        proxy_connect_timeout 1800;
+        proxy_send_timeout 1800;
+        send_timeout 1800;
+                
+  	    access_log /var/log/nginx/godonto-access.log combined;
+  	    error_log /var/log/nginx/godonto-error.log;
+	}
+    client_max_body_size 64M;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/godonto.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/godonto.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = godonto.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name godonto.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+# limit_req_zone $binary_remote_addr zone=mylimit:10m rate=1r/s;
+#limit_req_zone $binary_remote_addr zone=mylimit:10m rate=12r/m;
+limit_req_zone $http_authorization zone=mylimit:10m rate=6r/m;
+
+server {
+	server_name agentefederal.gaido.dev;
+	location / {
+        limit_req zone=mylimit burst=36 nodelay;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4016;
+  	    access_log /var/log/nginx/agentefederal-access.log combined;
+  	    error_log /var/log/nginx/agentefederal-error.log;
+	}
+    client_max_body_size 32M;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/agentefederal.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/agentefederal.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = agentefederal.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name agentefederal.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name bs.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4017;
+  	    access_log /var/log/nginx/bs-access.log combined;
+  	    error_log /var/log/nginx/bs-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/bs.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/bs.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = bs.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    listen 80;
+	server_name bs.gaido.dev;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name short.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4018;
+  	    access_log /var/log/nginx/short-access.log combined;
+  	    error_log /var/log/nginx/short-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/short.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/short.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+server {
+    if ($host = short.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name short.gaido.dev;
+	listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name reporter.gaido.dev;
+	location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4020;
+  	    access_log /var/log/nginx/reporter-access.log combined;
+  	    error_log /var/log/nginx/reporter-error.log;
+	}
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/reporter.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/reporter.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = reporter.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name reporter.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name pro-go.profinanc.com.br;
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4021;
+        access_log /var/log/nginx/pro-go-access.log combined;
+        error_log /var/log/nginx/pro-go-error.log;
+    }
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/pro-go.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/pro-go.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = pro-go.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    listen 80;
+    server_name pro-go.profinanc.com.br;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name logger.gaido.dev;
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4022;
+        access_log /var/log/nginx/logger-access.log combined;
+        error_log /var/log/nginx/logger-error.log;
+    }
+    client_max_body_size 64M;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/logger.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/logger.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = logger.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    server_name logger.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name storage.gaido.dev;
+    client_max_body_size 2048M;
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4023;
+        access_log /var/log/nginx/storage-access.log combined;
+        error_log /var/log/nginx/storage-error.log;
+    }
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/storage.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/storage.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = storage.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    listen 80;
+    server_name storage.gaido.dev;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name static.gaido.dev;
+    root /mnt/storage/static;
+    index index.html;
+    client_max_body_size 2048M;
+	location / {
+	    try_files $uri $uri/ =404;
+	}
+    sendfile on;
+    sendfile_max_chunk 1m;
+    tcp_nopush on;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/static.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/static.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = static.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    listen 80;
+    server_name static.gaido.dev;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name grana.gaido.dev;
+    client_max_body_size 1M;
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4024;
+        access_log /var/log/nginx/grana-access.log combined;
+        error_log /var/log/nginx/grana-error.log;
+    }
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/grana.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/grana.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = grana.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    server_name grana.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name oportunity.gaido.dev;
+    client_max_body_size 2M;
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4025;
+        access_log /var/log/nginx/oportunity-access.log combined;
+        error_log /var/log/nginx/oportunity-error.log;
+    }
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/oportunity.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/oportunity.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = oportunity.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    server_name oportunity.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name cnc2.profinanc.com.br;
+	location / {
+	    # limit_req zone=cnc_limit burst=120 nodelay;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4026;
+  	    access_log /var/log/nginx/cnc2-access.log combined;
+  	    error_log /var/log/nginx/cnc2-error.log;
+	}
+	client_max_body_size 4M;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/cnc2.profinanc.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/cnc2.profinanc.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = cnc2.profinanc.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name cnc2.profinanc.com.br;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name cal.gaido.dev;
+	location / {
+	    # limit_req zone=cnc_limit burst=120 nodelay;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4027;
+  	    access_log /var/log/nginx/cal.log combined;
+  	    error_log /var/log/nginx/cal-error.log;
+	}
+	client_max_body_size 1024M;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/cal.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/cal.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = cal.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name cal.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
+
+server {
+	server_name gd.gaido.dev;
+	location / {
+	    # limit_req zone=cnc_limit burst=120 nodelay;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4028;
+  	    access_log /var/log/nginx/gd.log combined;
+  	    error_log /var/log/nginx/gd-error.log;
+	}
+	client_max_body_size 1024M;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/gd.gaido.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/gd.gaido.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = gd.gaido.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+	server_name gd.gaido.dev;
+    listen 80;
+    return 404; # managed by Certbot
+}
