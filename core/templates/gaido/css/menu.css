@@ -36,12 +36,12 @@ body > header a#logo, header a.logo {
     height: 100%;
     display: flex;
     align-items: center;
-    background: url("../img/gaido.png") no-repeat center left;
+    background: url("../../../../tpl/img/giroos.png") no-repeat center left;
     background-size: 3.25rem;
 }
 
 body.dark > header a#logo, .dark header a.logo {
-    background-image: url("../img/gaido-light.png");
+    background-image: url("../../../../tpl/img/giroos-dark.png");
 }
 
 header a.logo {
