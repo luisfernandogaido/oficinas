@@ -1,9 +1,10 @@
 <?php
+
 return [
-    'nome' => 'Gaido',
-    'app' => 'gaido',
-    'sigla' => 'gaido',
-    'versao' => 'v2.0',
+    'nome' => 'Oficinas',
+    'app' => 'oficinas',
+    'sigla' => 'oficinas',
+    'versao' => 'v0.8',
     'ambiente' => 'D',
     'versao_css_js' => 1,
     'largura_limitada' => false,
