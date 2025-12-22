@@ -1,6 +1,0 @@
-GoMongoDB
-
-cd /mnt/volume_nyc1_01/storage
-du -h --max-depth=1 | sort -hr
-
-https://gemini.google.com/app/da868fe75e810387

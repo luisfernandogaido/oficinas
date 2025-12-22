@@ -1,9 +1,0 @@
-<service>
-    <id>myservice</id>
-    <name>My Service</name>
-    <description>Meu lindo serviço</description>
-    <env name="UMA_VARIAVEL_QUALQUER" value="UM VALOR QUALQUER"/>
-    <executable>myservice.exe</executable>
-    <log mode="none"/>
-    <onfailure action="restart" delay="10 sec"/>
-</service>

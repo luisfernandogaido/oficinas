@@ -1,1 +1,0 @@
-winsw restart myservice.xml

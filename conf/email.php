@@ -8,22 +8,6 @@ return [
         'de_senha' => '',
         'proxy' => false,
     ],
-    'local.gaido' => [
-        'email' => 'luisfernandogaido@gmail.com',
-        'senha' => 'wvzyyxmswjqunbrx',
-        'nome' => 'Luís Fernando Gaido',
-        'de' => '',
-        'de_senha' => '',
-        'proxy' => false,
-    ],
-    'localhost:9000' => [
-        'email' => 'luisfernandogaido@gmail.com',
-        'senha' => 'wvzyyxmswjqunbrx',
-        'nome' => 'Luís Fernando Gaido',
-        'de' => '',
-        'de_senha' => '',
-        'proxy' => false,
-    ],
     'NOTE-GAIDO' => [
         'email' => 'luisfernandogaido@gmail.com',
         'senha' => 'wvzyyxmswjqunbrx',
@@ -48,7 +32,7 @@ return [
         'de_senha' => '',
         'proxy' => false,
     ],
-    'php81' => [
+    'php84' => [
         'email' => 'luisfernandogaido@gmail.com',
         'senha' => 'wvzyyxmswjqunbrx',
         'nome' => 'Luís Fernando Gaido',

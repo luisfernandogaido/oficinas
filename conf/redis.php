@@ -4,14 +4,6 @@ return [
         'parameters' => 'tcp://localhost:6379',
         'auth' => '',
     ],
-    'local.gaido' => [
-        'parameters' => 'tcp://localhost:6379',
-        'auth' => '',
-    ],
-    'localhost:9000' => [
-        'parameters' => 'tcp://localhost:6379',
-        'auth' => '',
-    ],
     'NOTE-GAIDO' => [
         'parameters' => 'tcp://localhost:6379',
         'auth' => '',
@@ -20,7 +12,7 @@ return [
         'parameters' => 'tcp://localhost:6379',
         'auth' => '',
     ],
-    'php81' => [
+    'php84' => [
         'parameters' => 'tcp://localhost:6379',
         'auth' => '',
     ],

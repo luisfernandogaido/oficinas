@@ -1,1 +1,0 @@
-winsw stop myservice.xml

@@ -4,14 +4,6 @@ return [
         'dir' => 'D:\wamp\Apache24\htdocs\files',
         'dom' => 'http://localhost/files'
     ],
-    'local.gaidev' => [
-        'dir' => 'D:\wamp\Apache24\htdocs\files',
-        'dom' => 'http://localhost/files'
-    ],
-    'localhost:9000' => [
-        'dir' => 'D:\wamp\Apache24\htdocs\files',
-        'dom' => 'http://localhost/files'
-    ],
     'NOTE-GAIDO' => [
         'dir' => 'F:\wamp\Apache24\htdocs\files',
         'dom' => 'http://localhost/files'

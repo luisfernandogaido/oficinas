@@ -1,4 +1,0 @@
-contabo:
-host: 213.199.48.253
-user: root
-pass: Mczt6A4XSBPug7fovCb1nBacl

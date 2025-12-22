@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'nome' => 'Oficinas',
+    'nome' => 'giroos',
     'app' => 'oficinas',
     'sigla' => 'oficinas',
     'versao' => 'v0.8',

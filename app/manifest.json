@@ -1,33 +1,33 @@
 {
-  "name": "Gaido",
-  "short_name": "Gaido",
-  "description": "Desenvolvedor de software independente",
+  "name": "giroos",
+  "short_name": "giroos",
+  "description": "Software para Oficinas",
   "start_url": "index.php",
   "display": "standalone",
   "scope": "./",
   "icons": [
     {
-      "src": "../tpl/img/gaido-48.png",
+      "src": "../tpl/img/giroos-v1-48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "../tpl/img/gaido-64.png",
+      "src": "../tpl/img/giroos-v1-64.png",
       "type": "image/png",
       "sizes": "64x64"
     },
     {
-      "src": "../tpl/img/gaido-128.png",
+      "src": "../tpl/img/giroos-v1-128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "../tpl/img/gaido-256.png",
+      "src": "../tpl/img/giroos-v1-256.png",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "../tpl/img/gaido-512.png",
+      "src": "../tpl/img/giroos-v1-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

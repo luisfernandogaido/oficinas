@@ -1,4 +1,0 @@
-netstat -peanut | grep 4000
-
-4000    estudos     estudos.gaido.dev
-None    proworker
