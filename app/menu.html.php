@@ -8,9 +8,8 @@ use modelo\Usuario;
             <button class="voltar" title="Voltar"></button>
             <a class="logo" href="<?= SITE ?>app/index.php"></a>
         </header>
-        <section>
-            <a href="<?= SITE ?>app/tarefas/index.php">Tarefas</a>
-            <a href="<?= SITE ?>app/projetos/index.php">Projetos</a>
+       <section>
+
             <a href="<?= SITE ?>app/usuarios/index.php">Usuários</a>
             <a href="<?= SITE ?>app/contas/index.php">Contas</a>
             <a href="<?= SITE ?>app/validacao-whatsapp/index.php">Validação de WhatsApps</a>

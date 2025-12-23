@@ -1,39 +1,4 @@
 <div id="home">
-    <a class="item" href="tarefas/index.php">
-        <span class="icon task"></span>
-        <span class="desc">
-                <h2>Tarefas</h2>
-                <p>Demandas de desenvolvimento de software</p>
-        </span>
-    </a>
-    <a class="item" href="registros/index.php">
-        <span class="icon record"></span>
-        <span class="desc">
-                <h2>Registros</h2>
-                <p>Registros com data de hora de diferentes assuntos, para controle</p>
-        </span>
-    </a>
-    <a class="item" href="minidocs/index.php">
-        <span class="icon minidocs"></span>
-        <span class="desc">
-                <h2>Minidocs</h2>
-                <p>Crie e compartilhe facilmente pequenos e inteligentes documentos</p>
-        </span>
-    </a>
-    <a class="item" href="extra/peso/index.php">
-        <span class="icon weighing"></span>
-        <span class="desc">
-                <h2>Peso</h2>
-                <p>Registre o seu próprio peso ao longo do tempo</p>
-        </span>
-    </a>
-    <a class="item" href="telzap/index.php">
-        <span class="icon wa"></span>
-        <span class="desc">
-                <h2>Telefone -> WhatsApp</h2>
-                <p>Digite um número de telefone e seja direcionado para seu WhatsApp</p>
-            </span>
-    </a>
     <a class="item" href="validacao-whatsapp/index.php">
         <span class="icon wa"></span>
         <span class="desc">
