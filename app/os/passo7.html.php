@@ -59,7 +59,7 @@ use modelo\Veiculo;
       const destinatario = '<?= $whatsApp ?>'
 
     </script>
-    <script type="module" src="passo7.js?v=3"></script>
+    <script type="module" src="passo7.js?v=4"></script>
 <?php $template->fimJs() ?>
 
 <?php $template->renderiza() ?>

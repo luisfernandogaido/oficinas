@@ -5,7 +5,7 @@ import { saveStep } from './passos.js'
 const enviaMensagem = () => {
   const f = document.querySelector('form')
   if (reportaInvalidos(f)) return
-  const mensagem = `Código de validação: ${token}`
+  const mensagem = `Código validação: ${token}`
   send(destinatario, mensagem)
   // whatsAppLinkOpen(destinatario, mensagem)
   fetch('../validacao-whatsapp/envia.php').
