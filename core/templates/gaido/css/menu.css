@@ -36,8 +36,8 @@ body > header a#logo, header a.logo {
     height: 100%;
     display: flex;
     align-items: center;
-    background: url("../../../../tpl/img/giroos.png") no-repeat center left;
-    background-size: 3.25rem;
+    background: url("../../../../tpl/img/giroos.png") no-repeat left center;
+    background-size: 3rem;
 }
 
 body.dark > header a#logo, .dark header a.logo {

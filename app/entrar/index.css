@@ -57,13 +57,13 @@ h1, p {
 }
 
 #the-logo {
-    height: 60px;
-    background: url("../../core/templates/gaido/img/chess-gaido.svg") no-repeat center;
+    height: 120px;
+    background: url("../../tpl/img/giroos.png") no-repeat center;
     background-size: contain;
 }
 
 .dark #the-logo {
-    height: 60px;
-    background-image: url("../../core/templates/gaido/img/chess-gaido-light.svg");
+    height: 120px;
+    background: url("../../tpl/img/giroos-dark.png") no-repeat center;
     background-size: contain;
 }
