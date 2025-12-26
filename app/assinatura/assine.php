@@ -21,7 +21,7 @@ try {
         header('Location: cobranca.php');
         exit;
     }
-    notifyMe(Sistema::$app . ' assine: ' . Aut::$codigo, Aut::$usuario->codigo . ' ' . Aut::$usuario->nome);
+    notifyMe(Sistema::$app . ' assine!: ' . Aut::$codigo, Aut::$usuario->codigo . ' ' . Aut::$usuario->nome);
     $valores = json_encode(Assinatura::VALORES);
     $ultimoDia = Assinatura::ultimoDia(Aut::$codigo, Aut::$codConta);
     $ultimoDiaH = Formatos::dataApp($ultimoDia);
