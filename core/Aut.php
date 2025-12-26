@@ -351,7 +351,7 @@ class Aut
         try {
             self::filtraAssinatura();
         } catch (Throwable) {
-            notifyMe('assine: ' . Aut::$codigo, Aut::$usuario->nomeReal());
+            notifyMe(Sistema::$app . ' assine: ' . Aut::$codigo, Aut::$usuario->nomeReal());
             header('Location: ' . SITE . 'app/assinatura/assine.php');
             exit;
         }
