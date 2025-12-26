@@ -51,7 +51,11 @@
                         </div>
                         <div class="controle checks">
                             <label>
-                                <input type="radio" name="status" value="ativo" checked>
+                                <input type="radio" name="status" value="" checked>
+                                todos
+                            </label>
+                            <label>
+                                <input type="radio" name="status" value="ativo">
                                 ativo
                             </label>
                             <label>

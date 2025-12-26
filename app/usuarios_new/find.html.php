@@ -14,7 +14,7 @@
                 <?= e($u['codigo']) ?>
                 <?= e($u['nome']) ?>
             </td>
-            <td class="d3"><?= e($u['conta']) ?></td>
+            <td class="d3"><?= e($u['status']) ?></td>
             <td class="d3"><?= e($u['perfil']) ?></td>
             <td class="d3"><?= e($u['since']) ?></td>
             <td>
