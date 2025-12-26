@@ -25,6 +25,8 @@ try {
         }
         include 'os-cliente.php';
     } else {
+        Aut::filtraAssinaturaTrata();
+        Aut::filtraValidacaoPendenteTrata();
         include 'os-oficina.php';
     }
 } catch (Throwable $e) {

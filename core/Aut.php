@@ -337,12 +337,8 @@ class Aut
             return;
         }
         $usuario = new Usuario(Aut::$codigo);
-        if (self::$assinatura == null && $usuario->forcarAssinatura) {
+        if (Assinatura::vigente(Aut::$codigo, self::$codConta) == null && $usuario->forcarAssinatura) {
             throw new Exception('Requer assinatura.');
-        }
-        $status = self::$assinatura->status;
-        if ($status != Assinatura::STATUS_ATIVA) {
-            throw new Exception("Assinatura '$status'");
         }
     }
 
@@ -357,6 +353,28 @@ class Aut
         } catch (Throwable) {
             notifyMe('assine: ' . Aut::$codigo, Aut::$usuario->nomeReal());
             header('Location: ' . SITE . 'app/assinatura/assine.php');
+            exit;
+        }
+    }
+
+    /**
+     * @return void
+     * @throws Exception
+     */
+    public static function filtraValidacaoPendente(): void
+    {
+        if (WhatsappValidacao::isPendente(Aut::$codigo)) {
+            throw new Exception('Whatsapp pendente de validação');
+        }
+    }
+
+    public static function filtraValidacaoPendenteTrata(): void
+    {
+        try {
+            self::filtraValidacaoPendente();
+        } catch (Throwable) {
+            notifyMe('validação pendente: ' . Aut::$codigo, Aut::$usuario->nomeReal());
+            header('Location: ' . SITE . 'app/validacao-whatsapp/enviar.php');
             exit;
         }
     }
