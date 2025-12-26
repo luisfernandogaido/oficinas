@@ -34,7 +34,7 @@ try {
         'Se evitar o esquecimento de um único aditivo por mês, o sistema já se pagou.',
         'Ache o histórico do cliente pela placa em um segundo. Chega de revirar pilha de papel.',
         'Envie orçamentos que o cliente aprova direto pelo celular. Passe confiança.',
-        'Encontre qualquer carro ou cliente pelo nome, placa ou modelo instantaneamente',
+        'Encontre qualquer carro ou cliente pelo nome, placa ou modelo instantaneamente.',
         'Botões grandes e simples, sem complicação.',
         'O sistema é o seu silêncio. Controle a oficina sem precisar estar lá o tempo todo.',
         'Tecnologia de ponta com suporte de quem está a um café de distância de você.',
