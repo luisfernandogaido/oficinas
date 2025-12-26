@@ -81,7 +81,7 @@ class Grana extends Rest
         if ($this->httpCode() != 200) {
             throw new Exception('asaasCriaCobranca: ' . $res);
         }
-        return $this->json($res);
+        return $res;
     }
 
     /**

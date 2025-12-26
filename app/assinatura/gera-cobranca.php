@@ -14,6 +14,7 @@ try {
         'asaas_invoice_url' => $assinatura->asaasInvoiceUrl
     ];
 } catch (Throwable $e) {
+    dd($e);
     error_log($e);
     $ret = ['erro' => $e->getMessage()];
 }
