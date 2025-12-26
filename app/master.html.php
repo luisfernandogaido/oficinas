@@ -23,6 +23,15 @@
                 </p>
         </span>
     </a>
+    <a class="item" href="assinantes/index.php">
+        <span class="icon profit"></span>
+        <span class="desc">
+                <h2>Assinantes</h2>
+                <p>
+                    Lista de pessoas com assinaturas vigentes.
+                </p>
+        </span>
+    </a>
     <a class="item" href="workspaces/index.php">
         <span class="icon workspace"></span>
         <span class="desc">
