@@ -1,4 +1,5 @@
 <?php
+
 use bd\Formatos;
 use bd\My;
 use JetBrains\PhpStorm\NoReturn;
@@ -335,7 +336,8 @@ class Aut
         if (self::isGaido()) {
             return;
         }
-        if (self::$assinatura == null) {
+        $usuario = new Usuario(Aut::$codigo);
+        if (self::$assinatura == null && $usuario->forcarAssinatura) {
             throw new Exception('Requer assinatura.');
         }
         $status = self::$assinatura->status;
@@ -346,12 +348,14 @@ class Aut
 
     /**
      * @return void
+     * @throws Exception
      */
     public static function filtraAssinaturaTrata(): void
     {
         try {
             self::filtraAssinatura();
         } catch (Throwable) {
+            notifyMe('assine: ' . Aut::$codigo, Aut::$usuario->nomeReal());
             header('Location: ' . SITE . 'app/assinatura/assine.php');
             exit;
         }

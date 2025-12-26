@@ -24,7 +24,7 @@
         <?php foreach ($vigentes as $v): ?>
             <tr>
                 <td>
-                    <a href="../usuarios/usuario.php?codigo=<?= $v['cod_usuario'] ?>"><?= e($v['usuario']) ?></a>
+                    <a href="../usuarios_new/usuario.php?codigo=<?= $v['cod_usuario'] ?>"><?= e($v['usuario']) ?></a>
                 </td>
                 <td><?= e($v['ini']) ?> <?= e($v['fim']) ?></td>
             </tr>
