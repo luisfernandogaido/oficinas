@@ -1,12 +1,14 @@
 <?php
+
 namespace modelo;
 
 use app\client\Grana;
 use bd\Formatos;
+use bd\My;
 use DateTime;
 use Exception;
-use bd\My;
 use Sistema;
+
 use function floatval;
 use function in_array;
 use function notifyMe;
@@ -21,9 +23,9 @@ class Assinatura
     const STATUS_CANCELADA = 'cancelada';
 
     const VALORES = [
-        '0 months 1 days' => 5,
-        '0 months 7 days' => 6,
-        '1 months 0 days' => 7,
+        '1 month' => 79.90,
+        '3 months' => 179.00,
+        '1 year' => 597.00,
     ];
 
     const ASAAS_DE_PARA = [

@@ -18,26 +18,28 @@
         <h1><?= $titulo ?></h1>
         <div class="campos">
             <div class="campo">
-                <img src="../../core/templates/gaido/img/gaido.png">
+<!--                <img src="../../core/templates/gaido/img/gaido.png">-->
+                <img src="../../tpl/img/giroos.png">
             </div>
             <p class="argumento">
-                Um argumento bem convincente.
+<!--                Um argumento bem convincente.-->
+                <?= $argumentoConvincente ?>
             </p>
             <br>
             <br>
             <div class="campo" id="campo-periodo">
                 <div class="controle checks">
                     <label>
-                        <input type="radio" name="periodo" value="0 months 1 days" checked>
-                        24 horas
-                    </label>
-                    <label>
-                        <input type="radio" name="periodo" value="0 months 7 days">
-                        7 dias
-                    </label>
-                    <label>
-                        <input type="radio" name="periodo" value="1 months 0 days">
+                        <input type="radio" name="periodo" value="1 month" checked>
                         1 mês
+                    </label>
+                    <label>
+                        <input type="radio" name="periodo" value="3 months">
+                        3 meses
+                    </label>
+                    <label>
+                        <input type="radio" name="periodo" value="1 year">
+                        1 ano
                     </label>
                 </div>
                 <div class="mensagem"></div>
