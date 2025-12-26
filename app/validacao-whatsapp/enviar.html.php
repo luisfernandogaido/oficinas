@@ -22,10 +22,6 @@
                     O seu número já está validado.
                 </p>
             </div>
-            <br>
-            <div class="botoes">
-                <button class="back">Voltar</button>
-            </div>
         <?php else: ?>
             <div id="msg-inicial">
                 <p>
@@ -49,6 +45,7 @@
             </div>
         <?php endif; ?>
     </form>
+    <br>
     <div class="botoes">
         <button class="back link">Voltar</button>
     </div>
@@ -58,8 +55,8 @@
 <?php $template->iniJs() ?>
     <script type="module" src="enviar.js"></script>
     <script>
-      const token = '<?= $token ?>';
-      const destinatario = '<?= $whatsApp ?>';
+      const token = '<?= $token ?>'
+      const destinatario = '<?= $whatsApp ?>'
     </script>
 <?php $template->fimJs() ?>
 
