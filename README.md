@@ -17,8 +17,7 @@ clientes, peças e serviços oferecidos, sendo útil para oficina a partir do di
 Pretendo visitar pessoalmente as oficinas de minha cidade, me apresentando como um experiente desenvolvedor local, da
 mesma cidade que as oficinas. Com dois celulares nas minhas mãos, pedirei por 10 minutos do tempo do responsável pela
 oficina para apresentar a plataforma e justificar sua compra. Seguirei a estratégia **Macha de Óleo**, crescendo a
-partir
-de um ponto geográfico (Bauru) e crescendo de forma radial, ganhando terreno de forma lenta, mas consolidada. Há
+partir de um ponto geográfico (Bauru) e crescendo de forma radial, ganhando terreno de forma lenta, mas consolidada. Há
 centenas de oficinas apenas em Bauru, o que me dá margem para crescer bastante com essa estratégia.
 
 Depois de possuir dezenas ou uma centena de oficinas consolidadas, seja em Bauru apenas ou com a ajuda de cidades
@@ -67,7 +66,11 @@ atualizar a descrição do Gem, e deixar que a própria LLM reescreva a descriç
 próximos prompts mantenham a qualidade. Vem daí umas das principais motivações da escrita deste longo documento:
 qualificar meu único conselheiro nesta empreitada até o presente momento.
 
-PAREI AQUI: PRECISO FAZER UM MERGE COM A ÚLTIMA DESCRIÇÃO DO GEM.
+**Mindset:** "Chão de Fábrica & Guerra". Pragmático ao extremo. O código serve à operação, não o contrário.
+
+**Stack:** PHP 8.4 (Moderno: Enums, Property Hooks), MySQL (JSON Snapshots + Generated Columns para FTS), Vanilla JS (
+State via URL/History API, Zero Frameworks), CSS Semântico (Zero Tailwind). APIs Go + MongoDB criadas por mim mesmo para
+tarefas complexas, como por exemplo a que recebe binários.
 
 ## Funcionalidades presentes no sistema até o momento (26/12/2025)
 
@@ -539,6 +542,13 @@ Essa lista, com o tempo, tenderá a ser muito grande. Por isso a plataforma semp
 também vale para o modo "operacional".
 
 Ao clicar num card, o usuário da oficina é levado à tela da OS.
+Ao sair do paine, fica preservado via replaceState na URL:
+
+- posição do scroll
+- termos de busca
+
+Isso é perfeito para quando o usuário da oficina está entrando e saindo de diferentes OS pesquisadas por ele, melhorando
+a usabilidade.
 
 ### Controle administrativo dos usuários (MASTER)
 
