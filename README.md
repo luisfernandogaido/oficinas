@@ -90,6 +90,18 @@ esse softgware é fortemente likgado a histórico de clientes, essa prática é 
 fazer com que o tempo de expiração de cada convite seja virtualmente ilimitado. Ao invés de colocar 3 dias para criação,
 posso colocar mais tempo, como por exemplo 30 dias ou 365 dias.
 
+Um outro importante feature é adicionado sileciosamente ao Workspace recém criado ao clicar no link: duas enormes
+listas, uma de produtos e outra de serviços, sugeridas por LLMs durante o processo de desenvolvimento. Essa lista foi
+produzida através de múltiplas solicitaçõesa feitas por mim às LLMs por produtos e serviços comumente utilizados no
+Brasil. Uma cópia dessa lista é feita em cada Workspace, pois eu prevejo que no futuro, com calma a oficina possa
+editá-la à vontade, sem interferir nas listas dos demais usuários. Suponha que existam 500 oficinas em minha
+plataforma (uma meta que realizaria muitos dos meus senhos pessoais): a lista de produtos e serviços criados nem faria
+cócegas com alguns milhares de produtos e serviços por oficina.
+
+A ideia dessas listas prontas é permitir zero onboarding por parte da oficina. O dia 1 não será usado pela oficina para
+complexas configurações. O dia 1 já será imediatamente útil para a oficina. Eu sou obcecado por isso, pois intuo que um
+software de fácil adoção é essencial para seu sucesso.
+
 Uma vez dentro da plataforma após esse rápido onboarding, um único item é exibido na home do app:
 
 - Informações básicas: Informe nome, logo e endereço da sua oficina.
@@ -414,6 +426,42 @@ A oficina pode reagendar, cancelar o agendamento (voltando para SOLICITADA) e da
 
 O carro já está com a oficina, que pode começar a detalhar um orçamento mais preciso.
 
+Agora é momento de falar um pouco mais sobre a forma como produtos e serviços são incorporados na OS. Os recursos abaixo
+estão disponíveis mesmo em fases de estimativa do orçamento. Ao clicar num botão "+", um modal é exibido com os produtos
+e serviços mais usados pela oficina, com a possibilidade de se pesquisar via barra de buscas e fulltext. Se nenhum
+produto ou serviço jamais foi usado, há apenas uma barra de buscas convidando o usuário a informar. A pesquisa permitirá
+que o usuário pesquisa dentro daquelas listas de produtos e serviços gerada automaticamente no onboarding da oficina.
+Itens que fazem parte dessa lista têm categoria e nome, e um ícone preto e branco indicando se é produto ou serviço. À
+medida que o usuário escolhe esses itens, eles são incorporados atrás do modal, na aba do orçamento, pronto para ter sua
+quantidade e valor unitário informados.
+
+Se por acaso já há produtos usados pela oficina, eles sempre são listados com o ícone de produto ou serviço colorido,
+além do preço mais caro usado em qualquer orçamento. Isso é como uma chancela de que já trabalham com aquele produto. Ao
+ser adicionado ao orçamento um item já utilizado, o preço já vai preenchimento no orçamento, sempre com a opção de
+usuário modificá-lo. Ao selecionar uma caixa de quantidade ou valor unitário no orçamento, todo o texto do valor é
+selecionado, facilitando reinformar o valor. Quando o usuário edita o preço para cima ou pela primeira vez,
+automaticamente o preço do item é salvo na lista e será oferecido em casos futuros. Quando é editado para baixo isso o
+produto segue com o mais caro. A razão é simples: produtos costumam aumentar de preço por conta inflação. E quando isso
+ocorre, não costumam baixar mais. Quando se coloca um preço menor, geralmente está se aplicando um desconto pontual no
+item. A ideia aqui é clara: edição de valores de produtos e serviços praticados sem a necessidade de se editar enormes
+listas.
+
+Ao pesquisar por um item que não existe nem na lista de sugestões, um botão convida o usuário a cadastrar rápida e
+imediatamente o item. Ao ser clicado, o modal exibe um formulário minimalista ao extremo, com o nome do item já
+preenchido com os termos buscados, a opções por determinar se é produto e serviço e, na escolha do produto ou serviço,
+um combo com categorias de produtos ou de serviços é exibido. Ao salvar o item, ele é salvo na lista de itens no local
+apropriado e imediatamente inserido no orçamento. Aqui vemos um comportamento mais do mesmo: agilidade máxima desde o
+dia 1. Eu insisto que comentar esse tipo de coisa porque é uma máximo que permeia todo meu trabalho: agilidade e
+usabilidade extremas, que contrastam com concorrentes do meu país que, apesar de serem muito maiores, não têm esse
+esmero e esse polimento que é visto apeans nos maiores softwares do mercado mundial. Eu tenho tudo isso, menos fama e
+dinheiro, hehe.
+
+Feita essa digressão e prestes a voltar a descrever os recursos restantes, tenho planos para futuramente criar esses
+tais cadastros de produtos e serviços. Também estou aberto, para fechar negócios, a importar listas personalizadas de
+produtos e serviços dos clientes. Posso até vender como uma taxa de implantação. Não há controle de estoque, de peças,
+nem relatório de uso. Estamos falando de um MVP ainda, ou mínimo produto vendável neste ponto. Agora voltemos à
+descrição das funcionalidades atuais.
+
 O cliente é incentivado a esperar por um orçamento completo. A partir dessa fase, ele não pode mais editar o problema,
 pois tudo já está nas mãos da oficina, incluindo o veículo.
 
@@ -580,7 +628,7 @@ WhatsApp que eu tenho o baileys configurado e, para todos os fins, registra auto
 Marcando essa opção, o usuário será forçado a fazer isso em telas estratégicas, como do painel e da OS.
 
 Também posso forçar o usuário a assinar. Com isso desmarcado, o usuário da oficina pode usar livremente a plataforma.
-Com isso marcado, tela do painel e tela da OS deverão levar o usuário a fazer um pagamento via AssaS. Se o pagamento for
+Com isso marcado, tela do painel e tela da OS deverão levar o usuário a fazer um pagamento via AsaaS. Se o pagamento for
 bem-sucedido, a liberação do acesso é automática. Isso permite com que eu seja mais flexível com alguns clientes, dando
 um período arbitrário de testes, mas com total controle sobre o momento em que ele deverá assinar.
 
