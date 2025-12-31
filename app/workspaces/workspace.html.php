@@ -30,34 +30,6 @@ use modelo\Workspace;
             </div>
             <div class="campo">
                 <div class="rotulo">
-                    <label for="descricao">Descrição do seu negócio</label>
-                </div>
-                <div class="controle">
-                    <textarea name="descricao"
-                              id="descricao"
-                              placeholder="Destaque seus diferenciais, serviços principais e filosofia de trabalho."
-                    ><?= e($ws->descricao) ?></textarea>
-                </div>
-                <div class="mensagem"></div>
-            </div>
-            <div class="campo">
-                <br>
-                <div class="botoes">
-                    <button id="carregar-foto" type="button">Carregar foto</button>
-                </div>
-            </div>
-            <div class="campo">
-                <div class="rotulo">
-                    <label>Logo</label>
-                </div>
-                <div class="controle">
-                    <input type="hidden" id="logotipo" name="logotipo" value="<?= $ws->logo ?>">
-                    <input type="file" id="arquivo" name="arquivo" accept="image/*">
-                    <img src="<?= $ws->logo ?>">
-                </div>
-            </div>
-            <div class="campo">
-                <div class="rotulo">
                     <label for="cep">CEP</label>
                 </div>
                 <div class="controle">
@@ -117,6 +89,34 @@ use modelo\Workspace;
                 </div>
                 <div class="controle">
                     <input type="text" id="cidade" name="cidade" value="<?= e($ws->cidade) ?>">
+                </div>
+                <div class="mensagem"></div>
+            </div>
+            <div class="campo">
+                <br>
+                <div class="botoes">
+                    <button id="carregar-foto" type="button">Carregar foto</button>
+                </div>
+            </div>
+            <div class="campo">
+                <div class="rotulo">
+                    <label>Logo</label>
+                </div>
+                <div class="controle">
+                    <input type="hidden" id="logotipo" name="logotipo" value="<?= $ws->logo ?>">
+                    <input type="file" id="arquivo" name="arquivo" accept="image/*">
+                    <img src="<?= $ws->logo ?>">
+                </div>
+            </div>
+            <div class="campo">
+                <div class="rotulo">
+                    <label for="descricao">Descrição do seu negócio</label>
+                </div>
+                <div class="controle">
+                    <textarea name="descricao"
+                              id="descricao"
+                              placeholder="Destaque seus diferenciais, serviços principais e filosofia de trabalho."
+                    ><?= e($ws->descricao) ?></textarea>
                 </div>
                 <div class="mensagem"></div>
             </div>
