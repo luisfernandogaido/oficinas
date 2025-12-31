@@ -10,7 +10,7 @@ try {
     Aut::filtraPerfil(Usuario::PERFIL_PADRAO, Usuario::PERFIL_FUNCIONARIO);
     $workspace = Workspace::porCriador(Aut::$codigo);
     $historico = ($_GET['historico'] ?? 'false') == 'true';
-    $oss = Os::load($workspace->codigo ?? 0, $historico, $_GET['search']);
+    $oss = Os::load($workspace->codigo ?? 0, $historico, $_GET['search'], Aut::$perfil == Usuario::PERFIL_MASTER);
     $master = Aut::$perfil == Usuario::PERFIL_MASTER;
     include "operacionais.html.php";
 } catch (Throwable $e) {

@@ -1,5 +1,10 @@
-<?php foreach ($oss as $os): ?>
-    <a class="card" href="os.php?h=<?= $os['hash'] ?>" data-codigo="<?= $os['codigo'] ?>">
+<?php use modelo\OsStatus;
+
+foreach ($oss as $os): ?>
+    <a class="card"
+       href="os.php?h=<?= $os['hash'] ?>"
+       data-codigo="<?= $os['codigo'] ?>"
+       data-cod-criador="<?= $os['cod_criador'] ?>">
         <div class="field modelo-placa">
             <div class="modelo">
                 <?= $os['marca_modelo'] ?>
@@ -18,7 +23,7 @@
         </div>
         <div class="field cliente">
             <?= e($os['cliente']) ?>
-<!--                        Rogerio Maia de Queiroz Lessa-->
+            <!--                        Rogerio Maia de Queiroz Lessa-->
         </div>
         <div class="field tempo">
             <?= $os['status_since'] ?>
@@ -26,12 +31,17 @@
         <div class="field valor">
             <?= $os['valor_h'] != '0,00' ? $os['valor_h'] : '' ?>
         </div>
-        <?php if($master): ?>
+        <?php if ($master): ?>
             <div class="field workspace">
                 <?= e($os['workspace']) ?>
             </div>
             <div class="field actions">
                 <button class="delete"></button>
+                <button class="person"></button>
+                <?php if ($os['status'] == OsStatus::PENDENTE_MODERACAO): ?>
+                    <button class="thumb-up"></button>
+                    <button class="thumb-down"></button>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
     </a>

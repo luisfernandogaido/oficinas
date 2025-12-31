@@ -740,6 +740,37 @@ class Os
     }
 
     /**
+     * @param int $codUsuario
+     * @return void
+     * @throws Exception
+     */
+    public function aprovaPendencia(int $codUsuario): void
+    {
+        if (
+            $this->status != OsStatus::PENDENTE_MODERACAO
+        ) {
+            throw new LogicException("Não é possível aprovar pendência OS com status {$this->status->value}");
+        }
+        $this->mudaStatus(OsStatus::SOLICITADA, $codUsuario);
+    }
+
+    /**
+     * @param int $codUsuario
+     * @return void
+     * @throws Exception
+     */
+    public function bloqueiaPendencia(int $codUsuario): void
+    {
+        if (
+            $this->status != OsStatus::PENDENTE_MODERACAO
+        ) {
+            throw new LogicException("Não é possível bloquear pendência OS com status {$this->status->value}");
+        }
+        $this->mudaStatus(OsStatus::BLOQUEADA, $codUsuario);
+    }
+
+
+    /**
      * @param string $ip
      * @return void
      * @throws Exception
@@ -824,11 +855,11 @@ class Os
      * @param int $codWorkspace
      * @param bool $historico
      * @param string $search
+     * @param bool $master
      * @return array
      * @throws DateMalformedStringException
-     * @throws Exception
      */
-    public static function load(int $codWorkspace, bool $historico, string $search): array
+    public static function load(int $codWorkspace, bool $historico, string $search, bool $master): array
     {
         $search = Formatos::ft($search);
         $statusOperacionais = [
@@ -844,6 +875,17 @@ class Os
             OsStatus::CANCELADA,
             OsStatus::REJEITADA,
         ];
+        $statusOperacionaisMaster = [
+            OsStatus::RASCUNHO,
+            OsStatus::PENDENTE_MODERACAO
+        ];
+        $statusHistoricoMaster = [
+            OsStatus::BLOQUEADA,
+        ];
+        if ($master) {
+            $statusOperacionais = [...$statusOperacionais, ...$statusOperacionaisMaster];
+            $statusHistorico = [...$statusHistorico, ...$statusHistoricoMaster];
+        }
         $status = $historico ? $statusHistorico : $statusOperacionais;
         $status = array_map(fn($s) => "'" . $s->value . "'", $status);
         $statusIn = implode(', ', $status);
@@ -873,7 +915,9 @@ class Os
                     where cod_os = o.codigo
                     order by codigo desc
                     limit 1) criacao_status,
-                   w.nome workspace
+                   w.nome workspace,
+                   w.cod_criador
+            
             from os o
                  inner join usuario u on o.cod_cliente = u.codigo
                  inner join veiculo v on o.cod_veiculo = v.codigo

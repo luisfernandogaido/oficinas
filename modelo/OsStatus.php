@@ -21,7 +21,7 @@ enum OsStatus: string
     {
         return match ($this) {
             self::RASCUNHO => 'rascunho',
-            self::PENDENTE_MODERACAO => 'pendente de moderação',
+            self::PENDENTE_MODERACAO => 'pendente',
             self::BLOQUEADA => 'bloqueada',
             self::SOLICITADA => 'solicitada',
             self::ANALISE => 'análise',

@@ -22,6 +22,15 @@ const load = async () => {
     document.querySelector('.cards').querySelectorAll('button.delete').forEach(b => {
       b.addEventListener('click', exclui)
     })
+    document.querySelector('.cards').querySelectorAll('button.person').forEach(b => {
+      b.addEventListener('click', personifica)
+    })
+    document.querySelector('.cards').querySelectorAll('button.thumb-up').forEach(b => {
+      b.addEventListener('click', aprovaPendencia)
+    })
+    document.querySelector('.cards').querySelectorAll('button.thumb-down').forEach(b => {
+      b.addEventListener('click', bloqueiaPendencia)
+    })
     timerPooling = setTimeout(load, POOLING)
 
     //isso é só uma prova de conceito: é possível trafegar HTML e JSON.
@@ -116,11 +125,50 @@ const exclui = async e => {
   const a = e.currentTarget.closest('a')
   const res = await fetch('actions/exclui.php?codigo=' + a.dataset.codigo)
   const r = await res.json()
-  if(r.erro){
+  if (r.erro) {
     abre(r.erro, 10, 'OK')
     return
   }
   a.remove()
+}
+
+const personifica = async e => {
+  e.stopPropagation()
+  e.preventDefault()
+  const a = e.currentTarget.closest('a')
+  const res = await fetch('actions/personifica.php?cod_criador=' + a.dataset.codCriador)
+  const r = await res.json()
+  if (r.erro) {
+    abre(r.erro, 10, 'OK')
+    return
+  }
+  location.reload()
+}
+
+const aprovaPendencia = async e => {
+  e.stopPropagation()
+  e.preventDefault()
+  const a = e.currentTarget.closest('a')
+  const res = await fetch('actions/aprova-pendencia.php?codigo=' + a.dataset.codigo)
+  const r = await res.json()
+  if (r.erro) {
+    abre(r.erro, 10, 'OK')
+    return
+  }
+  load().then()
+}
+
+const bloqueiaPendencia = async e => {
+  e.stopPropagation()
+  e.preventDefault()
+  const a = e.currentTarget.closest('a')
+  const res = await fetch('actions/bloqueia-pendencia.php?codigo=' + a.dataset.codigo)
+  const r = await res.json()
+  if (r.erro) {
+    abre(r.erro, 10, 'OK')
+    return
+  }
+  load().then()
 }
 
 let timer

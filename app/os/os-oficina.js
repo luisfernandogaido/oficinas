@@ -78,6 +78,7 @@ const asyncOnFocusTab = () => {
 
 const updatePorStatus = () => {
   switch (status) {
+    case 'pendente_moderacao':
     case 'solicitada':
       mostraActions(['dar-entrada', 'agendar'])
       document.querySelector('button[data-target="orcamento"]').textContent = 'Estimativa'

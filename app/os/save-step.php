@@ -62,6 +62,9 @@ try {
         if ($os->status == OsStatus::RASCUNHO) {
             //todo inverter depois de implementado
             $os->mudaStatus(OsStatus::PENDENTE_MODERACAO, Aut::$codigo);
+            if (!Aut::isGaido() && Aut::$codPersonificador != 1) {
+                notifyMe('os pendente', 'Corre lá, filhão: https://oficinas.gaido.space/app/os/index.php');
+            }
 //            if (Aut::isGaido() || Aut::$codPersonificador == 1) {
 //                $os->mudaStatus(OsStatus::SOLICITADA, Aut::$codigo);
 //            } else {
