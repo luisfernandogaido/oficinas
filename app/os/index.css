@@ -78,7 +78,7 @@ div.cards > .card {
     font-size: 0.9rem;
 }
 
-.card  .field.modelo-placa .placa {
+.card .field.modelo-placa .placa {
     text-align: center;
     font-size: 0.9rem;
     font-family: monospace;
@@ -115,6 +115,15 @@ div.cards > .card {
     margin-left: auto;
     justify-content: flex-end;
 }
+
+.card :is(.field.workspace, .field.actions) {
+    flex: 0 0 calc(100% / 2 - 2px);
+}
+
+.card :is(.field.actions) {
+    justify-content: flex-end;
+}
+
 
 /*defina as larguras dos fields*/
 

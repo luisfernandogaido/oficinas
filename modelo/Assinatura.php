@@ -23,9 +23,9 @@ class Assinatura
     const STATUS_CANCELADA = 'cancelada';
 
     const VALORES = [
-        '1 month' => 79.90,
-        '3 months' => 179.00,
-        '1 year' => 597.00,
+        '1 month' => 87.00,
+        '3 months' => 237.00,
+        '1 year' => 835.00,
     ];
 
     const ASAAS_DE_PARA = [

@@ -182,7 +182,6 @@ class Os
         $placa = null;
         $marca = null;
         $modelo = null;
-        $telefone = null;
         if ($this->codVeiculo) {
             $veiculo = new Veiculo($this->codVeiculo);
             $placa = $veiculo->placa;
@@ -190,9 +189,11 @@ class Os
             $modelo = $veiculo->modelo;
         }
         $usuario = new Usuario($this->codCliente);
+        $ws = new Workspace($this->codWorkspace);
         $telefone = Formatos::telefoneBd($usuario->celular);
         $termos = [
             $this->codigo,
+            $ws->nome,
             $placa,
             $marca,
             $modelo,
@@ -205,6 +206,10 @@ class Os
         $c->execute_query("UPDATE os SET indice = ? where codigo = ?", [$this->indice, $this->codigo]);
     }
 
+    /**
+     * @return void
+     * @throws Exception
+     */
     public function saveProblem(): void
     {
         $c = My::con();
@@ -275,7 +280,6 @@ class Os
      */
     public function moveTo(int $codCliente): void
     {
-        $c = My::con();
         $this->codCliente = $codCliente;
         $veiculoDessaOs = new Veiculo($this->codVeiculo);
         $veiculosDoUsuario = Veiculo::doProprietario($codCliente);
@@ -720,6 +724,22 @@ class Os
     }
 
     /**
+     * @return void
+     * @throws Exception
+     */
+    public function exclui(): void
+    {
+        $filesProblema = $this->filesProblema();
+        $storage = new Storage();
+        foreach ($filesProblema as $file) {
+            $storage->fileDelete($file['id']);
+        }
+        $c = My::con();
+        $c->query("DELETE FROM os WHERE codigo = $this->codigo");
+        $this->codigo = 0;
+    }
+
+    /**
      * @param string $ip
      * @return void
      * @throws Exception
@@ -828,7 +848,12 @@ class Os
         $status = array_map(fn($s) => "'" . $s->value . "'", $status);
         $statusIn = implode(', ', $status);
         $c = My::con();
-        $where = ["o.cod_workspace = $codWorkspace"];
+        if ($codWorkspace) {
+            $where = ["o.cod_workspace = $codWorkspace"];
+        } else {
+            $where = [];
+        }
+        $where[] = "o.status in ($statusIn)";
         if ($search) {
             $search = $c->real_escape_string($search);
             $where[] = "MATCH(o.indice) AGAINST ('$search' IN BOOLEAN MODE)";
@@ -847,12 +872,13 @@ class Os
                     from os_historico
                     where cod_os = o.codigo
                     order by codigo desc
-                    limit 1) criacao_status
+                    limit 1) criacao_status,
+                   w.nome workspace
             from os o
                  inner join usuario u on o.cod_cliente = u.codigo
                  inner join veiculo v on o.cod_veiculo = v.codigo
+                 inner join workspace w on o.cod_workspace = w.codigo                    
             where $where
-            and o.status in ($statusIn)
             ORDER BY codigo desc
             limit 100
         OPERACIONAIS;

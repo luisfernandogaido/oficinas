@@ -60,7 +60,13 @@ try {
         // também não precisa moderar os casos que eu mesmo estou criando (talvez) para acelerar meu desenvolvimento
         // subsequente, mas talvez isso atrapalhe demonstrações completas.
         if ($os->status == OsStatus::RASCUNHO) {
-            $os->mudaStatus(OsStatus::SOLICITADA, Aut::$codigo);
+            //todo inverter depois de implementado
+            $os->mudaStatus(OsStatus::PENDENTE_MODERACAO, Aut::$codigo);
+//            if (Aut::isGaido() || Aut::$codPersonificador == 1) {
+//                $os->mudaStatus(OsStatus::SOLICITADA, Aut::$codigo);
+//            } else {
+//                $os->mudaStatus(OsStatus::PENDENTE_MODERACAO, Aut::$codigo);
+//            }
         }
     }
     if (isset($_POST['nome'])) {

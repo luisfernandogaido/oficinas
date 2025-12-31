@@ -19,9 +19,15 @@ const load = async () => {
     const qs2 = queryString()
     if (qs1 != qs2) return
     document.querySelector('.cards').innerHTML = html
+    document.querySelector('.cards').querySelectorAll('button.delete').forEach(b => {
+      b.addEventListener('click', exclui)
+    })
+    timerPooling = setTimeout(load, POOLING)
+
+    //isso é só uma prova de conceito: é possível trafegar HTML e JSON.
     const data = JSON.parse(document.querySelector('.cards .data').textContent)
     console.log(data)
-    timerPooling = setTimeout(load, POOLING)
+
   } catch (e) {
     abre(e, 10, 'OK')
   }
@@ -102,6 +108,19 @@ const inputSearchListener = () => {
   clearTimeout(timer)
   timer = setTimeout(load, DEBOUNCE)
 
+}
+
+const exclui = async e => {
+  e.stopPropagation()
+  e.preventDefault()
+  const a = e.currentTarget.closest('a')
+  const res = await fetch('actions/exclui.php?codigo=' + a.dataset.codigo)
+  const r = await res.json()
+  if(r.erro){
+    abre(r.erro, 10, 'OK')
+    return
+  }
+  a.remove()
 }
 
 let timer

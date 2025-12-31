@@ -1,5 +1,5 @@
 <?php foreach ($oss as $os): ?>
-    <a class="card" href="os.php?h=<?= $os['hash'] ?>">
+    <a class="card" href="os.php?h=<?= $os['hash'] ?>" data-codigo="<?= $os['codigo'] ?>">
         <div class="field modelo-placa">
             <div class="modelo">
                 <?= $os['marca_modelo'] ?>
@@ -26,6 +26,14 @@
         <div class="field valor">
             <?= $os['valor_h'] != '0,00' ? $os['valor_h'] : '' ?>
         </div>
+        <?php if($master): ?>
+            <div class="field workspace">
+                <?= e($os['workspace']) ?>
+            </div>
+            <div class="field actions">
+                <button class="delete"></button>
+            </div>
+        <?php endif; ?>
     </a>
 <?php endforeach; ?>
 <script type="application/json" class="data"><?= json_encode($_SERVER) ?></script>

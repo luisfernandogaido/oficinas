@@ -1,4 +1,13 @@
 <div id="home">
+    <a class="item" href="os/index.php">
+        <span class="icon request"></span>
+        <span class="desc">
+                <h2>Painel</h2>
+                <p>
+                    Analise novas OS e acompanhe tudo que está acontecendo na bancada de TODAS as oficinas!
+                </p>
+        </span>
+    </a>
     <a class="item" href="validacao-whatsapp/index.php">
         <span class="icon wa"></span>
         <span class="desc">
