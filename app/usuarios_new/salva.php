@@ -45,6 +45,6 @@ try {
     if (str_contains($mensagem, 'usuario.cpf_cnpj')) {
         $mensagem = 'CPF/CNPJ já cadastrado';
     }
-    $ret = ['erro' => true, 'mensagem' => $mensagem];
+    $ret = ['erro' => $mensagem];
 }
 echo json_encode($ret);
