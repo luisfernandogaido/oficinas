@@ -8,14 +8,10 @@ use modelo\OsItemTipo;
 use modelo\OsStatus;
 use modelo\Usuario;
 
-/**
- * @var Os $os
- */
-
 $cliente = new Usuario($os->codCliente);
 $modeloCurto = $veiculo->modeloCurto();
 $filesProblema = $os->filesProblema();
-$historico = $os->historico();
+$historico = $os->historico(Aut::$perfil == Usuario::PERFIL_MASTER);
 $previsaoEntrada = null;
 if ($os->status == OsStatus::AGENDADA) {
     $diasSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];

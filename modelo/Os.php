@@ -17,7 +17,9 @@ use Redis;
 use Sistema;
 use UnderflowException;
 
+use function array_filter;
 use function array_map;
+use function array_values;
 use function explode;
 use function implode;
 use function min;
@@ -325,12 +327,18 @@ class Os
     }
 
     /**
+     * @param bool $master
      * @return array
      * @throws DateMalformedStringException
      */
-    public function historico(): array
+    public function historico(bool $master): array
     {
-        return OsHistorico::load($this->codigo);
+        if ($master) {
+            return OsHistorico::load($this->codigo);
+        }
+        return array_values(array_filter(OsHistorico::load($this->codigo), function ($v) {
+            return $v['status'] != OsStatus::PENDENTE_MODERACAO;
+        }));
     }
 
     /**
