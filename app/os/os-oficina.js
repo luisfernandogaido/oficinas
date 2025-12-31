@@ -80,6 +80,7 @@ const updatePorStatus = () => {
   switch (status) {
     case 'pendente_moderacao':
     case 'solicitada':
+    case 'bloqueada':
       mostraActions(['dar-entrada', 'agendar'])
       document.querySelector('button[data-target="orcamento"]').textContent = 'Estimativa'
       document.querySelector('button[data-target="execucao"]').classList.add('hidden')

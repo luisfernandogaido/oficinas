@@ -39,7 +39,7 @@ use modelo\Workspace;
             <p class="c f">
                 <span class="status <?= $os->status->value ?>"><?= $os->status->label() ?></span>
             </p>
-            <?php if ($os->status == OsStatus::SOLICITADA): ?>
+            <?php if ($os->status == OsStatus::PENDENTE_MODERACAO || $os->status == OsStatus::SOLICITADA): ?>
                 <p class="c f">
                     Solicitação enviada. Aguarde pelo nosso retorno.
                 </p>
