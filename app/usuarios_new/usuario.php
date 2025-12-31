@@ -14,7 +14,7 @@ try {
     $conta = (new Conta($usuario->codConta))->nome;
     $diasCriacao = DataHora::sinceDays(new DateTime($usuario->criacao));
     $diasAlteracao = DataHora::sinceDays(new DateTime($usuario->alteracao));
-    $primeiroNome = Formatos::primeiroNome($usuario->apelido ?: $usuario->nome);
+    $primeiroNome = Formatos::primeiroNome($usuario->nome ?: $usuario->apelido);
     $mensagem = "Olá, $primeiroNome!";
     $clickToChat = null;
     if ($usuario->celular) {
