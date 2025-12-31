@@ -22,7 +22,6 @@ try {
     $modeloCurto = $veiculo->modeloCurto();
     $link = SITE . "app/os/os.php?h=$_POST[hash]";
     $telefone = Formatos::telefoneBd($cliente->celular);
-    $telefone = '14981199947'; //todo remover
     $linhas = [
         "Olá, $cliente->nome! Aqui é *$ws->nome*. Recebemos sua solicitação para *$modeloCurto*.",
         "",
