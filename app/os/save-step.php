@@ -54,22 +54,16 @@ try {
         }
         $veiculo->salva();
         $os->codVeiculo = $veiculo->codigo;
-
-        //quando eu implementar o mecanismo de moderação, deve ser mudado para OsStatus::PENDENTE_MODERACAO.
-        // também deve verificar a reputação do cliente perante a oficina. não precisa moderar os confiáveis.
-        // também não precisa moderar os casos que eu mesmo estou criando (talvez) para acelerar meu desenvolvimento
-        // subsequente, mas talvez isso atrapalhe demonstrações completas.
+        // todo também deve verificar a reputação do cliente perante a oficina. não precisa moderar os confiáveis.
         if ($os->status == OsStatus::RASCUNHO) {
-            //todo inverter depois de implementado
-            $os->mudaStatus(OsStatus::PENDENTE_MODERACAO, Aut::$codigo);
             if (!Aut::isGaido() && Aut::$codPersonificador != 1) {
                 notifyMe('os pendente', 'Corre lá, filhão: https://oficinas.gaido.space/app/os/index.php');
             }
-//            if (Aut::isGaido() || Aut::$codPersonificador == 1) {
-//                $os->mudaStatus(OsStatus::SOLICITADA, Aut::$codigo);
-//            } else {
-//                $os->mudaStatus(OsStatus::PENDENTE_MODERACAO, Aut::$codigo);
-//            }
+            if (Aut::isGaido() || Aut::$codPersonificador == 1) {
+                $os->mudaStatus(OsStatus::SOLICITADA, Aut::$codigo);
+            } else {
+                $os->mudaStatus(OsStatus::PENDENTE_MODERACAO, Aut::$codigo);
+            }
         }
     }
     if (isset($_POST['nome'])) {
