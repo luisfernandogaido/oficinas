@@ -185,6 +185,11 @@ class Workspace
     public function remove(): void
     {
         $c = My::con();
+        $codsOs = Os::all($this->codigo);
+        foreach ($codsOs as $codOs) {
+            $os = new Os($codOs);
+            $os->exclui();
+        }
         $c->query("delete from workspace where codigo = $this->codigo");
         if ($this->logo) {
             $storage = new Storage();

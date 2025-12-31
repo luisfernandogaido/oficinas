@@ -948,4 +948,15 @@ class Os
         }
         return $oss;
     }
+
+    public static function all(int $codWorkspace): array
+    {
+        $c = My::con();
+        $r = $c->query("select codigo from os where cod_workspace = $codWorkspace");
+        $codigos = [];
+        while ($l = $r->fetch_assoc()) {
+            $codigos[] = $l['codigo'];
+        }
+        return $codigos;
+    }
 }
