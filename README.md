@@ -1,6 +1,6 @@
 # oficinas
 
-GiraOs, o app que aumenta o giro.
+GiroOs, o app que aumenta o giro.
 
 ## Objetivo do app
 
