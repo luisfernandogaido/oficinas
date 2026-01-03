@@ -110,7 +110,7 @@ use modelo\Workspace;
             </div>
             <div class="campo">
                 <div class="rotulo">
-                    <label for="descricao">Descrição do seu negócio</label>
+                    <label for="descricao">Descrição do seu negócio (Opcional)</label>
                 </div>
                 <div class="controle">
                     <textarea name="descricao"
